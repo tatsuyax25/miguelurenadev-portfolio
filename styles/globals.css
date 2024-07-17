@@ -1,0 +1,10 @@
+@import './tailwind.css';
+
+/* Your custom styles */
+body {
+  @apply m-0 font-sans;
+}
+
+body.dark-mode {
+  @apply bg-gray-900 text-white;
+}
