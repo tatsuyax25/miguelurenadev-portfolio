@@ -4,5 +4,5 @@ export default function Contact() {
       <h2 className="text-2xl font-bold">Contact</h2>
       <p className="mt-4">This is the Contact section.</p>
     </section>
-  )
+  );
 }

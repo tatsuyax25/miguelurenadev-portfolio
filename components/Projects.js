@@ -4,5 +4,5 @@ export default function Projects() {
       <h2 className="text-2xl font-bold">Projects</h2>
       <p className="mt-4">This is the Projects section.</p>
     </section>
-  )
+  );
 }
