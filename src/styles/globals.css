@@ -1,6 +1,10 @@
 @import './tailwind.css';
 
 /* Your custom styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   @apply bg-gray-900 text-white font-sans;
 }
