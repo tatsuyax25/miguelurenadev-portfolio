@@ -2,7 +2,19 @@
 
 /* Your custom styles */
 body {
-  @apply m-0 font-sans;
+  @apply bg-gray-900 text-white font-sans;
+}
+
+section {
+  @apply py-16 px-4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+a {
+  @apply text-blue-400 hover:text-blue-300;
 }
 
 body.dark-mode {
