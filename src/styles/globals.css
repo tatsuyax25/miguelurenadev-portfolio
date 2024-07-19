@@ -24,3 +24,13 @@ a {
 body.dark-mode {
   @apply bg-gray-900 text-white;
 }
+
+/* Dark Mode Styles */
+body.dark {
+  @apply bg-gray-900 text-white;
+}
+
+/* Header Styles */
+header {
+  @apply shadow-md;
+}

@@ -4,14 +4,25 @@ export default function DarkModeToggle() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add('dark-mode');
+    const savedMode = localStorage.getItem('dark-mode') === 'true';
+    setDarkMode(savedMode);
+    if (savedMode) {
+      document.body.classList.add('dark');
     } else {
-      document.body.classList.remove('dark-mode');
+      document.body.classList.remove('dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('dark-mode', darkMode);
+    if (darkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
     }
   }, [darkMode]);
 
   return (
-    <button onClick={() => setDarkMode(!darkMode)} className='p-2 mt-4 bg-gray-300 dark:bg-gray-700'>Toggle Dark Mode</button>
+    <button onClick={() => setDarkMode(!darkMode)} className='ml-4 p-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition-colors'>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
   );
 }
