@@ -1,28 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
 export default function DarkModeToggle() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    const savedMode = localStorage.getItem('dark-mode') === 'true';
-    setDarkMode(savedMode);
-    if (savedMode) {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      setDarkMode(true);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('dark-mode', darkMode);
     if (darkMode) {
-      document.body.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.body.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
 
   return (
-    <button onClick={() => setDarkMode(!darkMode)} className='ml-4 p-2 bg-gray-700 text-white rounded hover:bg-gray-600 transition-colors'>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
+    <button
+      onClick={() => setDarkMode(!darkMode)}
+      className="bg-gray-800 text-white px-4 py-2 rounded"
+    >
+      {darkMode ? "Light Mode" : "Dark Mode"}
+    </button>
   );
 }

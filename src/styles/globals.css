@@ -5,8 +5,9 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Base styles */
 body {
-  @apply bg-gray-900 text-white font-sans;
+  @apply bg-gray-900 text-white font-sans; /* Default light mode */
 }
 
 section {
@@ -19,10 +20,6 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   @apply text-blue-400 hover:text-blue-300;
-}
-
-body.dark-mode {
-  @apply bg-gray-900 text-white;
 }
 
 /* Dark Mode Styles */
