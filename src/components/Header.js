@@ -5,7 +5,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full bg-transparent p-4 z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Title */}
-        <h1 className="text-3xl font-bold text-white">MiguelUreña.Dev</h1>
+        <h1 className="text-xl font-bold text-white">Miguel Ureña Dev Portfolio</h1>
 
         {/* Navigation Links */}
         <nav className="flex-grow flex justify-center space-x-8">
