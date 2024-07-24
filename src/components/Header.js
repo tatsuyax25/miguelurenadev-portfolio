@@ -9,6 +9,12 @@ export default function Header() {
 
         {/* Navigation Links */}
         <nav className="flex-grow flex justify-center space-x-8">
+          <a 
+            href="#home" 
+            className="text-white hover:text-gray-300 transition-colors"
+          >
+            Home
+          </a>
           <a
             href="#about"
             className="text-white hover:text-gray-300 transition-colors"
