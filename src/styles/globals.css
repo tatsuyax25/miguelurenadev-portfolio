@@ -7,7 +7,7 @@ html {
 
 /* Base styles */
 body {
-  @apply bg-gray-900 text-white font-sans; /* Default light mode */
+  @apply bg-white text-black font-sans; /* Default light mode */
 }
 
 section {
