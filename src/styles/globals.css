@@ -31,3 +31,12 @@ body.dark {
 header {
   @apply shadow-md;
 }
+
+/* About section styles */
+#about {
+  @apply bg-gray-800 text-white;
+}
+
+#about img {
+  @apply rounded-full w-64 h-64 object-cover;
+}
