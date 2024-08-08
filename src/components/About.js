@@ -25,7 +25,7 @@ export default function About() {
         {/* Hero Image */}
         <div>
           <img
-            src="/public/HeroImage.png" // Replace with the path to your image
+            src="/HeroImage.png" // Replace with the path to your image
             alt="Miguel Ureña"
             className="rounded-full w-64 h-64 object-cover"
           />
