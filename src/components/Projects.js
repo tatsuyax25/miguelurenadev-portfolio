@@ -27,8 +27,23 @@ export default function Projects() {
   ];
   return (
     <section id="projects" className="p-8 bg-gray-100 dark:bg-gray-800">
-      <h2 className="text-2xl font-bold">Projects</h2>
-      <p className="mt-4">This is the Projects section.</p>
+      <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project, index) => (
+          <div key={index} className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+            <img 
+              src={project.image}
+              alt={project.title}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
+              <p className="text-lg mb-4">{project.description}</p>
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 transition-colors">View Project</a>
+            </div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }
