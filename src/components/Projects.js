@@ -8,6 +8,22 @@ export default function Projects() {
       link: "https://github.com/tatsuyax25/team6-hackathon-fe",
       image: "/images/PlantivityV2.png",
     },
+    {
+      title: "Snake Web Game JS",
+      description:
+        "Navigate the snake to eat food, avoid walls and its own body, and achieve the highest score possible. Each piece of food increases the snake's length, adding to the challenge.",
+      live: "https://snake-web-game-js.netlify.app",
+      link: "https://github.com/tatsuyax25/snake-game-js",
+      image: "/images/snakeWebGameJS.png",
+    },
+    {
+      title: "Connect 4 Web Game",
+      description:
+        "Connect Four is a game you play against the computer. Take turns dropping colored discs into a vertical grid. The first to get four of thier discs in a row, either horizontally, vertically, or diagonally, wins the game.",
+      live: "https://connect-four-web-game.netlify.app",
+      link: "https://github.com/tatsuyax25/connect-four",
+      image: "/images/ConnectFour.png",
+    },
   ];
   return (
     <section id="projects" className="p-8 bg-gray-100 dark:bg-gray-800">
