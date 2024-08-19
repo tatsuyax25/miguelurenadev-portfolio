@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section id="about" className="bg-gray-800 text-center py-20">
+    <section id="about" className="bg-gray-800 text-white py-20">
       <div className="container mx-auto flex flex-col md:flex-row items-center md:justify-between p-4">
         {/* Text Content */}
         <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
@@ -23,11 +23,11 @@ export default function About() {
         </div>
 
         {/* Hero Image */}
-        <div>
+        <div className="md:w-1/2 flex justify-center">
           <img
             src="/HeroImage.png" // Replace with the path to your image
             alt="Miguel Ureña"
-            className="rounded-full w-64 h-64 object-cover"
+            className="rounded-full w-80 h-80 object-cover"
           />
         </div>
       </div>

@@ -26,15 +26,15 @@ export default function Projects() {
     },
   ];
   return (
-    <section id="projects" className="p-8 bg-gray-100 dark:bg-gray-800">
+    <section id="projects" className="p-8 bg-gray-900 text-white">
       <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div key={index} className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+          <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-md">
             <img 
               src={project.image}
               alt={project.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-48 object-cover rounded-md mb-4"
             />
             <div className="p-6">
               <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>

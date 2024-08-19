@@ -7,11 +7,11 @@ html {
 
 /* Base styles */
 body {
-  @apply bg-white text-black font-sans; /* Default light mode */
+  @apply bg-gray-900 text-white font-sans; /* Default light mode */
 }
 
 section {
-  @apply py-16 px-4;
+  @apply py-16 px-4 bg-gray-900 text-white;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -19,7 +19,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  @apply text-blue-600 hover:text-blue-500;
+  @apply text-blue-400 hover:text-blue-300;
+}
+
+body.dark-mode {
+  @apply bg-gray-900 text-white;
 }
 
 /* Dark Mode Styles */
@@ -34,9 +38,9 @@ header {
 
 /* About section styles */
 #about {
-  @apply bg-gray-800 text-white;
+  @apply bg-gray-900 text-white;
 }
 
 #about img {
-  @apply rounded-full w-64 h-64 object-cover;
+  @apply rounded-full w-80 h-80 object-cover;
 }

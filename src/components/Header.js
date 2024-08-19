@@ -2,7 +2,7 @@ import DarkModeToggle from "./DarkModeToggle";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full bg-transparent p-4 z-50">
+    <header className="fixed top-0 left-0 w-full bg-gray-900 text-white p-4 z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Title */}
         <h1 className="text-xl font-bold text-white">Miguel Ureña Portfolio</h1>
