@@ -70,6 +70,24 @@ export default function Contact() {
             </button>
           </div>
         </form>
+        <div className="social-icons mt-8 flex justify-center space-x-4">
+          <a
+            href="https://www.linkedin.com/in/urena-miguel82/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-2xl"
+          >
+            <i className="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/tatsuyax25"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-2xl"
+          >
+            <i className="fab fa-github"></i>
+          </a>
+        </div>
       </div>
     </section>
   );
