@@ -10,7 +10,12 @@ import {
   FaGithub,
   FaAws,
 } from "react-icons/fa";
-import { SiMongodb, SiTailwindcss, SiPostgresql, SiDjango } from "react-icons/si";
+import {
+  SiMongodb,
+  SiTailwindcss,
+  SiPostgresql,
+  SiDjango,
+} from "react-icons/si";
 import { DiHeroku } from "react-icons/di";
 
 export default function About() {
@@ -80,7 +85,7 @@ export default function About() {
 
       {/* Skills Carousel */}
       <div className="skills-carousel py-10">
-        <h3 className="text-3xl font-bold mb-6">Skills</h3>
+        <h3 className="text-3xl font-bold mb-6 text-center">Skills</h3>
         <Slider {...settings}>
           <div className="skill-item">
             <FaHtml5 size={50} />

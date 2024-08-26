@@ -1,6 +1,7 @@
 @import './tailwind.css';
-@import '~slick-carousel/slick/slick.css';
-@import '~slick-carousel/slick/slick-theme.css';
+/* In globals.css */
+/* @import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css"; */
 
 /* Your custom styles */
 html {
@@ -45,4 +46,18 @@ header {
 
 #about img {
   @apply rounded-full w-80 h-80 object-cover;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  color: #fff; /* Or adjust for dark mode */
+}
+
+.skill-item p {
+  margin-top: 10px;
+  font-size: 14px;
 }
