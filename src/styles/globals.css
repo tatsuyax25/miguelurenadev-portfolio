@@ -10,11 +10,11 @@ html {
 
 /* Base styles */
 body {
-  @apply bg-gray-900 text-white font-sans; /* Default light mode */
+  @apply bg-gray-100 text-black font-sans; /* Default light mode */
 }
 
 section {
-  @apply py-16 px-4 bg-gray-900 text-white;
+  @apply py-16 px-4 bg-gray-100 text-black;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,15 +22,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-  @apply text-blue-400 hover:text-blue-300;
-}
-
-body.dark-mode {
-  @apply bg-gray-900 text-white;
+  @apply text-blue-500 hover:text-blue-400;
 }
 
 /* Dark Mode Styles */
-body.dark {
+html.dark {
+  @apply bg-gray-900 text-white;
+}
+
+html.dark section {
   @apply bg-gray-900 text-white;
 }
 
@@ -41,13 +41,18 @@ header {
 
 /* About section styles */
 #about {
-  @apply bg-gray-900 text-white;
+  @apply bg-gray-100 text-black; /* Light mode */
+}
+
+html.dark #about {
+  @apply bg-gray-900 text-white; /* Dark mode */
 }
 
 #about img {
   @apply rounded-full w-80 h-80 object-cover;
 }
 
+/* Skills Carousel */
 .skill-item {
   display: flex;
   flex-direction: column;
