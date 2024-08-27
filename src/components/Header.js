@@ -2,34 +2,34 @@ import DarkModeToggle from "./DarkModeToggle";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full bg-gray-900 text-white p-4 z-50">
+    <header className="fixed top-0 left-0 w-full bg-gray-100 dark:bg-gray-800 dark:text-white p-4 z-50 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         {/* Title */}
-        <h1 className="text-xl font-bold text-white">Miguel Ureña Portfolio</h1>
+        <h1 className="text-xl font-bold">Miguel Ureña Portfolio</h1>
 
         {/* Navigation Links */}
         <nav className="flex-grow flex justify-center space-x-8">
-          <a 
-            href="#home" 
-            className="text-white hover:text-gray-300 transition-colors"
+          <a
+            href="#home"
+            className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             Home
           </a>
           <a
             href="#about"
-            className="text-white hover:text-gray-300 transition-colors"
+            className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             About
           </a>
           <a
             href="#projects"
-            className="text-white hover:text-gray-300 transition-colors"
+            className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             Projects
           </a>
           <a
             href="#contact"
-            className="text-white hover:text-gray-300 transition-colors"
+            className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
             Contact
           </a>
