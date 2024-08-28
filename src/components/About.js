@@ -51,7 +51,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="bg-gray-800 text-white py-20">
+    <section id="about" className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white py-20">
       <div className="container mx-auto flex flex-col md:flex-row items-center md:justify-between p-4">
         {/* Text Content */}
         <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
