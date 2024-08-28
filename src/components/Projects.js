@@ -26,7 +26,7 @@ export default function Projects() {
     },
   ];
   return (
-    <section id="projects" className="p-8 bg-gray-900 text-white">
+    <section id="projects" className="p-8 bg-gray-100 dark:bg-gray-800 dark:text-white">
       <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {projects.map((project, index) => (
