@@ -25,12 +25,13 @@ export default function Projects() {
       image: "/images/ConnectFour.png",
     },
   ];
+
   return (
     <section id="projects" className="p-8 bg-gray-100 dark:bg-gray-800 dark:text-white">
       <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div key={index} className="bg-gray-800 p-4 rounded-lg shadow-md">
+          <div key={index} className="bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 p-4 rounded-lg shadow-md transition-colors duration-300">
             <img 
               src={project.image}
               alt={project.title}
