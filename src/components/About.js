@@ -51,7 +51,10 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="bg-gray-100 dark:bg-gray-800 text-black dark:text-white py-20">
+    <section
+      id="about"
+      className="min-h-screen w-full bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-20 transition-colors duration-500"
+    >
       <div className="container mx-auto flex flex-col md:flex-row items-center md:justify-between p-4">
         {/* Text Content */}
         <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
@@ -88,59 +91,59 @@ export default function About() {
         <h3 className="text-3xl font-bold mb-6 text-center">Skills</h3>
         <Slider {...settings}>
           <div className="skill-item">
-            <FaHtml5 size={50} />
+            <FaHtml5 size={40} />
             <p>HTML</p>
           </div>
           <div className="skill-item">
-            <FaCss3Alt size={50} />
+            <FaCss3Alt size={40} />
             <p>CSS</p>
           </div>
           <div className="skill-item">
-            <FaJsSquare size={50} />
+            <FaJsSquare size={40} />
             <p>JavaScript</p>
           </div>
           <div className="skill-item">
-            <FaReact size={50} />
+            <FaReact size={40} />
             <p>React</p>
           </div>
           <div className="skill-item">
-            <FaBootstrap size={50} />
+            <FaBootstrap size={40} />
             <p>Bootstrap</p>
           </div>
           <div className="skill-item">
-            <SiTailwindcss size={50} />
+            <SiTailwindcss size={40} />
             <p>Tailwind CSS</p>
           </div>
           <div className="skill-item">
-            <FaNodeJs size={50} />
+            <FaNodeJs size={40} />
             <p>Node.js</p>
           </div>
           <div className="skill-item">
-            <SiMongodb size={50} />
+            <SiMongodb size={40} />
             <p>MongoDB</p>
           </div>
           <div className="skill-item">
-            <FaPython size={50} />
+            <FaPython size={40} />
             <p>Python</p>
           </div>
           <div className="skill-item">
-            <SiDjango size={50} />
+            <SiDjango size={40} />
             <p>Django</p>
           </div>
           <div className="skill-item">
-            <SiPostgresql size={50} />
+            <SiPostgresql size={40} />
             <p>Postgres</p>
           </div>
           <div className="skill-item">
-            <FaGithub size={50} />
+            <FaGithub size={40} />
             <p>GitHub</p>
           </div>
           <div className="skill-item">
-            <FaAws size={50} />
+            <FaAws size={40} />
             <p>AWS</p>
           </div>
           <div className="skill-item">
-            <DiHeroku size={50} />
+            <DiHeroku size={40} />
             <p>Heroku</p>
           </div>
         </Slider>

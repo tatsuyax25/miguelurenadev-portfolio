@@ -34,6 +34,20 @@ html.dark section {
   @apply bg-gray-900 text-white;
 }
 
+html.dark #about {
+  background-color: #1a202c; /* Adjust as needed */
+  color: white;
+}
+
+html.dark section {
+  @apply bg-gray-900 text-white; /* Ensure all sections reflect dark mode */
+}
+
+html.dark .skills-carousel {
+  background-color: #1a202c;
+  color: white;
+}
+
 /* Header Styles */
 header {
   @apply shadow-md;
@@ -82,9 +96,6 @@ input[type="checkbox"]:checked::before {
   @apply bg-gray-100 text-black; /* Light mode */
 }
 
-html.dark #about {
-  @apply bg-gray-900 text-white; /* Dark mode */
-}
 
 #about img {
   @apply rounded-full w-80 h-80 object-cover;
@@ -100,9 +111,14 @@ html.dark #about {
   color: #fff; /* Or adjust for dark mode */
 }
 
+.skill-item svg {
+  width: 40px !important; /* Smaller size */
+  height: 40px !important; /* Match height */
+}
+
 .skill-item p {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 /* Resume Button Styles */
