@@ -29,12 +29,23 @@ export default function DarkModeToggle() {
   }, [darkMode]);
 
   return (
-    <button
-      type="button"
-      onClick={() => setDarkMode(!darkMode)}
-      className="bg-gray-800 text-white px-4 py-2 rounded"
-    >
-      {darkMode ? "Light Mode" : "Dark Mode"}
-    </button>
+    <div className="relative">
+      <input 
+        type="checkbox"
+        id="darkModeToggle"
+        className="hidden"
+        aria-labelledby="darkModeToggleLabel"
+        title="Toggle Dark Mode"
+        checked={darkMode}
+        onChange={() => setDarkMode(!darkMode)}
+      />
+      <label
+        htmlFor="darkModeToggle"
+        className="bg-gray-800 text-white px-4 py-2 rounded cursor-pointer"
+        id="darkModeToggleLabel"
+      >
+        {darkMode ? "Light Mode" : "Dark Mode"}
+      </label>
+    </div>
   );
 }
