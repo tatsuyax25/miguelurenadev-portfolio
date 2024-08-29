@@ -22,6 +22,10 @@ export default function DarkModeToggle() {
       document.documentElement.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
+
+    // Logging for debugging
+    console.log("Dark Mode:", darkMode);
+    console.log("LocalStorage Theme:", localStorage.getItem("theme"));
   }, [darkMode]);
 
   return (
