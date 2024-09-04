@@ -6,15 +6,22 @@
 /* Your custom styles */
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Base styles */
 body {
   @apply bg-gray-100 text-black font-sans; /* Default light mode */
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 section {
   @apply py-16 px-4 bg-gray-100 text-black;
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -46,6 +53,13 @@ html.dark section {
 html.dark .skills-carousel {
   background-color: #1a202c;
   color: white;
+}
+
+/* Footer styles */
+footer {
+  @apply w-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-4 text-center;
+  margin: 0;
+  padding: 0;
 }
 
 /* Header Styles */

@@ -53,7 +53,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen w-full bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-20 transition-colors duration-500"
+      className="w-full bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-20 transition-colors duration-500"
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center md:justify-between p-4">
         {/* Text Content */}

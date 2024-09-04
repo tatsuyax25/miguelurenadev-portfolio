@@ -1,5 +1,5 @@
 import { FaFileAlt, FaSun, FaMoon } from "react-icons/fa";
-import DarkModeToggle from "./DarkModeToggle";
+
 
 export default function Header() {
   return (

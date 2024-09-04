@@ -4,7 +4,8 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen w-full flex items-center justify-center bg-gray-100 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500"
+      className="w-full flex items-center justify-center bg-gray-100 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500"
+      style={{ border: "2px solid red" }}
     >
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-extrabold mb-4">Contact Me</h2>
