@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="w-full flex items-center justify-center bg-gray-100 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500"
+      className="min-h-screen w-full flex items-center justify-center bg-gray-100 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500 mb-0 pb-0"
       style={{ border: "2px solid red" }}
     >
       <div className="container mx-auto text-center">

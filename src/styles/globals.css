@@ -24,14 +24,6 @@ section {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply font-bold;
-}
-
-a {
-  @apply text-blue-500 hover:text-blue-400;
-}
-
 /* Dark Mode Styles */
 html.dark {
   @apply bg-gray-900 text-white;
@@ -59,7 +51,12 @@ html.dark .skills-carousel {
 footer {
   @apply w-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-4 text-center;
   margin: 0;
-  padding: 0;
+}
+
+/* Fix possible padding/margin in the Contact section */
+#contact {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* Header Styles */
