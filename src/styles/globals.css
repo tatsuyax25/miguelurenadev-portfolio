@@ -11,6 +11,10 @@ html {
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 /* Base styles */
 body {
   @apply bg-gray-100 text-black font-sans; /* Default light mode */
@@ -20,8 +24,7 @@ body {
 }
 
 section {
-  @apply py-16 px-4 bg-gray-100 text-black;
-  margin: 0;
+  @apply py-16 px-4 bg-gray-100 text-black h-full;
 }
 
 /* Dark Mode Styles */
@@ -49,8 +52,7 @@ html.dark .skills-carousel {
 
 /* Footer styles */
 footer {
-  @apply w-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-4 text-center;
-  margin: 0;
+  @apply w-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-4 text-center mt-0;
 }
 
 /* Fix possible padding/margin in the Contact section */
