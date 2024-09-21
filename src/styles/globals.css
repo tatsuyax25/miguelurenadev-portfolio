@@ -13,6 +13,8 @@ html {
 
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Base styles */
@@ -36,7 +38,7 @@ html.dark section {
   @apply bg-gray-900 text-white;
 }
 
-html.dark #about {
+html.dark section #about {
   background-color: #1a202c; /* Adjust as needed */
   color: white;
 }
