@@ -21,13 +21,14 @@ import { DiHeroku } from "react-icons/di";
 export default function About() {
   // Slider settings
   const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    dots: false, // Disable dots if you want a more seamless look
+    infinite: true, // Allows the carousel to loop
+    speed: 5000, // Slow down the speed for smoother movement
+    slidesToShow: 5, // Number of slides visible at once
+    slidesToScroll: 1, // Scroll one at a time for a continuous effect
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 0, // Set the autoplay speed to 0 for continuous effect
+    cssEase: "linear", // This is key to make the transition seamless
     responsive: [
       {
         breakpoint: 1024,
