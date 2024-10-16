@@ -25,6 +25,10 @@ body {
   padding: 0;
 }
 
+body.dark #about {
+  background-color: #111827 !important; /* Force gray-900 */
+}
+
 section {
   @apply py-16 px-4 bg-gray-100 text-black h-full;
 }
