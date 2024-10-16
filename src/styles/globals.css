@@ -27,6 +27,7 @@ body {
 
 body.dark #about {
   background-color: #111827 !important; /* Force gray-900 */
+  color: #ffffff !important; /* Force text to white */
 }
 
 section {

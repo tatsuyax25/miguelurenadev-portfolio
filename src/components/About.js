@@ -91,60 +91,60 @@ export default function About() {
         <h3 className="text-3xl font-bold mb-6 text-center">Skills</h3>
         <Slider {...settings}>
           <div className="skill-item">
-            <FaHtml5 size={40} />
-            <p>HTML</p>
+            <FaHtml5 className="text-red-500" size={40} />
+            <p className="text-black dark:text-white">HTML</p>
           </div>
           <div className="skill-item">
-            <FaCss3Alt size={40} />
-            <p>CSS</p>
+            <FaCss3Alt className="text-blue-500" size={40} />
+            <p className="text-black dark:text-white">CSS</p>
           </div>
           <div className="skill-item">
-            <FaJsSquare size={40} />
-            <p>JavaScript</p>
+            <FaJsSquare className="text-yellow-500" size={40} />
+            <p className="text-black dark:text-white">JavaScript</p>
           </div>
           <div className="skill-item">
-            <FaReact size={40} />
-            <p>React</p>
+            <FaReact className="text-blue-300" size={40} />
+            <p className="text-black dark:text-white">React</p>
           </div>
           <div className="skill-item">
-            <FaBootstrap size={40} />
-            <p>Bootstrap</p>
+            <FaBootstrap className="text-purple-600" size={40} />
+            <p className="text-black dark:text-white">Bootstrap</p>
           </div>
           <div className="skill-item">
-            <SiTailwindcss size={40} />
-            <p>Tailwind CSS</p>
+            <SiTailwindcss className="text-blue-400" size={40} />
+            <p className="text-black dark:text-white">Tailwind CSS</p>
           </div>
           <div className="skill-item">
-            <FaNodeJs size={40} />
-            <p>Node.js</p>
+            <FaNodeJs className="text-green-500" size={40} />
+            <p className="text-black dark:text-white">Node.js</p>
           </div>
           <div className="skill-item">
-            <SiMongodb size={40} />
-            <p>MongoDB</p>
+            <SiMongodb className="text-green-400" size={40} />
+            <p className="text-black dark:text-white">MongoDB</p>
           </div>
           <div className="skill-item">
-            <FaPython size={40} />
-            <p>Python</p>
+            <FaPython className="text-yellow-500" size={40} />
+            <p className="text-black dark:text-white">Python</p>
           </div>
           <div className="skill-item">
-            <SiDjango size={40} />
-            <p>Django</p>
+            <SiDjango className="text-black dark:text-white" size={40} />
+            <p className="text-black dark:text-white">Django</p>
           </div>
           <div className="skill-item">
-            <SiPostgresql size={40} />
-            <p>Postgres</p>
+            <SiPostgresql className="text-blue-800" size={40} />
+            <p className="text-black dark:text-white">Postgres</p>
           </div>
           <div className="skill-item">
-            <FaGithub size={40} />
-            <p>GitHub</p>
+            <FaGithub className="text-black dark:text-white" size={40} />
+            <p className="text-black dark:text-white">GitHub</p>
           </div>
           <div className="skill-item">
-            <FaAws size={40} />
-            <p>AWS</p>
+            <FaAws className="text-orange-500" size={40} />
+            <p className="text-black dark:text-white">AWS</p>
           </div>
           <div className="skill-item">
-            <DiHeroku size={40} />
-            <p>Heroku</p>
+            <DiHeroku className="text-purple-800" size={40} />
+            <p className="text-black dark:text-white">Heroku</p>
           </div>
         </Slider>
       </div>
