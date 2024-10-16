@@ -28,6 +28,7 @@ export default function About() {
     slidesToScroll: 1, // Scroll one at a time for a continuous effect
     autoplay: true, // Enable autoplay
     autoplaySpeed: 0, // Set the autoplay speed to 0 for continuous effect
+    arrows: false, // Disable the arrows
     cssEase: "linear", // This is key to make the transition seamless
     responsive: [
       {

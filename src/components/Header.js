@@ -40,7 +40,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           {/* Resume Button with Icon */}
           <a
-            href="/resume.pdf" // Replace with the path to your resume
+            href="https://drive.google.com/file/d/1OLekxMTdoQf1_KWdXwo3XFXcgrExrcmL/view?usp=sharing" // Replace with the path to your resume
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
@@ -50,8 +50,16 @@ export default function Header() {
 
           {/* Dark Mode Toggle with Icon */}
           <div className="flex items-center">
-            <input type="checkbox" id="darkModeToggle" className="hidden" onChange={() => document.body.classList.toggle('dark')}/>
-            <label htmlFor="darkModeToggle" className="flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              id="darkModeToggle"
+              className="hidden"
+              onChange={() => document.body.classList.toggle("dark")}
+            />
+            <label
+              htmlFor="darkModeToggle"
+              className="flex items-center cursor-pointer"
+            >
               <FaSun className="text-yellow-500" />
               <div className="relative w-10 h-6 bg-gray-300 dark:bg-gray-600 rounded-full mx-2">
                 <div className="dot absolute top-0.5 left-1 w-4 h-4 bg-white rounded-full transition-transform dark:translate-x-4"></div>
