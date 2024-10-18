@@ -133,7 +133,7 @@ export default function About() {
             <p className="text-black dark:text-white">Django</p>
           </div>
           <div className="skill-item">
-            <SiPostgresql className="text-blue-800" size={40} />
+            <SiPostgresql className="text-blue-600" size={40} />
             <p className="text-black dark:text-white">Postgres</p>
           </div>
           <div className="skill-item">
