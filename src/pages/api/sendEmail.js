@@ -3,10 +3,13 @@ import nodemailer from "nodemailer";
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { name, email, subject, message } = req.body;
+    console.log("Form Data Received:", { name, email, subject, message }); // Log the received form data
 
     // Configure your Nodemailer transporter for Gmail
     const transporter = nodemailer.createTransport({
-      service: "gmail", // You can also try using any other service like "hotmail", "outlook", etc.
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false, // Use TLS
       auth: {
         user: "mrurena82@gmail.com", // Your Gmail address
         pass: "gddi nodc heep qxje", // App password or Gmail password (if less secure apps are enabled)
@@ -15,7 +18,7 @@ export default async function handler(req, res) {
 
     // Define email options
     const mailOptions = {
-      from: email,
+      from: "mrurena82@gmail.com",
       to: "mrurena82@gmail.com", // Your own email
       subject: `Contact Form: ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}\n`,
@@ -25,6 +28,7 @@ export default async function handler(req, res) {
       // Attempt to send the email
       const info = await transporter.sendMail(mailOptions);
       console.log("Email sent:", info.response);
+      console.log("Preview URL:", nodemailer.getTestMessageUrl(info));
       res.status(200).json({ message: "Email sent successfully!" });
     } catch (error) {
       console.error("Error sending email:", error);
