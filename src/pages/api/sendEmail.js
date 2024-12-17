@@ -13,8 +13,10 @@ export default async function handler(req, res) {
       secure: false, // Use TLS
       auth: {
         user: "mrurena82@gmail.com", // Your Gmail address
-        pass: "txph gobp wdlq rxcr", // App password or Gmail password (if less secure apps are enabled)
+        pass: "txphgobpwdlqrxcr", // App password or Gmail password (if less secure apps are enabled)
       },
+      logger: true, // Enable logging
+      debug: true, // Enable debug output
     });
 
     // Define email options
@@ -28,8 +30,7 @@ export default async function handler(req, res) {
     try {
       // Attempt to send the email
       const info = await transporter.sendMail(mailOptions);
-      console.log("Email sent:", info.response);
-      console.log("Preview URL:", nodemailer.getTestMessageUrl(info));
+      console.log("Email sent successfully::", info.response);
       res.status(200).json({ message: "Email sent successfully!" });
     } catch (error) {
       console.error("Error sending email:", error);
