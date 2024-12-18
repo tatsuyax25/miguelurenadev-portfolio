@@ -4,6 +4,8 @@ export default async function handler(req, res) {
   if (req.method === "POST") {
     const { name, email, subject, message } = req.body;
     console.log("Form Data Received:", { name, email, subject, message }); // Log the received form data
+    console.log("EMAIL:", process.env.EMAIL);
+    console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
 
     // Configure your Nodemailer transporter for Gmail
     const transporter = nodemailer.createTransport({
@@ -12,8 +14,8 @@ export default async function handler(req, res) {
       port: 587,
       secure: false, // Use TLS
       auth: {
-        user: "mrurena82@gmail.com", // Your Gmail address
-        pass: "txphgobpwdlqrxcr", // App password or Gmail password (if less secure apps are enabled)
+        user: process.env.EMAIL, // Your Gmail address
+        pass: process.env.EMAIL_PASS, // App password or Gmail password (if less secure apps are enabled)
       },
       logger: true, // Enable logging
       debug: true, // Enable debug output
@@ -21,8 +23,8 @@ export default async function handler(req, res) {
 
     // Define email options
     const mailOptions = {
-      from: "mrurena82@gmail.com",
-      to: "mrurena82@gmail.com", // Your own email
+      from: email,
+      to: email, // Your own email
       subject: `Contact Form: ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}\n`,
     };

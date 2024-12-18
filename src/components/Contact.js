@@ -20,6 +20,9 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
+      // Log the data being sent for debugging
+      console.log("Sending Data:", formData);
+
       const res = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
@@ -32,13 +35,15 @@ export default function Contact() {
         setStatus("Email sent successfully!");
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        setStatus("Error sending email.");
+        const errorData = await res.json(); // Parse error response
+        console.error("Error response:", errorData); // Log error details
+        setStatus(`Error: ${errorData.message || "Error sending email."}`);
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error:", error); // Log unexpected errors
       setStatus("Error sending email.");
     }
-  }
+  };
   
   return (
     <section
@@ -50,7 +55,10 @@ export default function Contact() {
         <p className="text-lg mb-4">
           Feel free to reach out to me through any of the platforms below:
         </p>
-        <form className="max-w-lg mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-lg mx-auto bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md border border-gray-200 dark:border-gray-700"
+        >
           <div className="mb-6">
             <label htmlFor="name" className="block text-lg font-semibold mb-2">
               Full Name
@@ -59,7 +67,9 @@ export default function Contact() {
               type="text"
               id="name"
               name="name"
-              className="w-full p-3 rounded bg-gray-200 dark:bg-gray-700 text-black dark:-text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full p-3 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
           </div>
@@ -71,6 +81,8 @@ export default function Contact() {
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
               className="w-full p-3 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
@@ -86,6 +98,8 @@ export default function Contact() {
               type="text"
               id="subject"
               name="subject"
+              value={formData.subject}
+              onChange={handleChange}
               className="w-full p-3 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
             />
@@ -100,6 +114,8 @@ export default function Contact() {
             <textarea
               id="message"
               name="message"
+              value={formData.message}
+              onChange={handleChange}
               rows="5"
               className="w-full p-3 rounded bg-gray-200 dark:bg-gray-700 text-black dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               required
