@@ -23,8 +23,9 @@ export default async function handler(req, res) {
 
     // Define email options
     const mailOptions = {
-      from: email,
-      to: email, // Your own email
+      from: `${name} <${email}`, // Sender's name and email
+      to: process.env.EMAIL, // Your own email
+      replyTo: email, // Reply to the user's email
       subject: `Contact Form: ${subject}`,
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}\n`,
     };
