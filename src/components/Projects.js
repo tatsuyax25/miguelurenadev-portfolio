@@ -19,7 +19,7 @@ export default function Projects() {
     {
       title: "Connect 4 Web Game",
       description:
-        "Connect Four is a game you play against the computer. Take turns dropping colored discs into a vertical grid. The first to get four of thier discs in a row, either horizontally, vertically, or diagonally, wins the game.",
+        "Connect Four is a game you play against the computer. Take turns dropping colored discs into a vertical grid. The first to get four of their discs in a row, either horizontally, vertically, or diagonally, wins the game.",
       live: "https://connect-four-web-game.netlify.app",
       link: "https://github.com/tatsuyax25/connect-four",
       image: "/images/ConnectFour.png",
@@ -27,12 +27,18 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="p-8 bg-gray-100 dark:bg-gray-900 dark:text-white">
+    <section
+      id="projects"
+      className="p-8 bg-gray-100 dark:bg-gray-900 dark:text-white"
+    >
       <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
-          <div key={index} className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-lg shadow-lg transition-shadow duration-300">
-            <img 
+          <div
+            key={index}
+            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-lg shadow-lg transition-shadow duration-300"
+          >
+            <img
               src={project.image}
               alt={project.title}
               className="w-full h-48 object-cover rounded-md mb-4"
@@ -40,7 +46,14 @@ export default function Projects() {
             <div className="space-y-4">
               <h3 className="text-2xl font-semibold">{project.title}</h3>
               <p className="text-lg">{project.description}</p>
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-700 transition-colors">View Project</a>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 hover:text-blue-700 transition-colors"
+              >
+                View Project
+              </a>
             </div>
           </div>
         ))}
