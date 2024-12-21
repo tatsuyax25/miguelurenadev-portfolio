@@ -20,7 +20,6 @@ export default function Contact() {
     setStatus("Sending...");
 
     try {
-      // Log the data being sent for debugging
       console.log("Sending Data:", formData);
 
       const res = await fetch("/api/sendEmail", {
@@ -35,16 +34,16 @@ export default function Contact() {
         setStatus("Email sent successfully!");
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        const errorData = await res.json(); // Parse error response
-        console.error("Error response:", errorData); // Log error details
+        const errorData = await res.json();
+        console.error("Error response:", errorData);
         setStatus(`Error: ${errorData.message || "Error sending email."}`);
       }
     } catch (error) {
-      console.error("Error:", error); // Log unexpected errors
+      console.error("Error:", error);
       setStatus("Error sending email.");
     }
   };
-  
+
   return (
     <section
       id="contact"
@@ -121,21 +120,26 @@ export default function Contact() {
               required
             ></textarea>
           </div>
-          <div className="text-center">
+          <div className="text-center mb-4">
             <button
               type="submit"
-              className="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 transition-colors"
+              className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors"
             >
               Send Message
             </button>
           </div>
+          {status && (
+            <div className="text-center mt-4 text-lg font-semibold">
+              <p>{status}</p>
+            </div>
+          )}
         </form>
-        <div className="social-icons mt-8 flex justify-center space-x-4">
+        <div className="social-icons mt-8 flex justify-center space-x-6">
           <a
             href="https://www.linkedin.com/in/urena-miguel82/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl dark:text-blue-300 text-blue-700 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
+            className="text-3xl dark:text-blue-300 text-blue-700 hover:text-blue-800 dark:hover:text-blue-400 transition-colors"
           >
             <FaLinkedin />
           </a>
@@ -143,7 +147,7 @@ export default function Contact() {
             href="https://github.com/tatsuyax25"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-2xl dark:text-white text-black hover:text-gray-800 dark:hover:text-gray-300 transition-colors"
+            className="text-3xl dark:text-white text-black hover:text-gray-800 dark:hover:text-gray-300 transition-colors"
           >
             <FaGithub />
           </a>
