@@ -38,7 +38,7 @@ export default function About() {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
         },
@@ -55,13 +55,13 @@ export default function About() {
   return (
     <section
       id="about"
-      className="w-full bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-20 transition-colors duration-500"
+      className="w-full bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-20 sm:py-20 transition-colors duration-500"
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center md:justify-between p-4">
+      <div className="container mx-auto flex flex-col md:flex-row items-center md:justify-between p-4 sm:px-6">
         {/* Text Content */}
-        <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-          <h2 className="text-4xl font-extrabold mb-4">About Me</h2>
-          <p className="text-lg mb-4">
+        <div className="md:w-1/2 text-center md:text-left mb-6 md:mb-0">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">About Me</h2>
+          <p className="text-lg sm:text-lg mb-4">
             As a devoted and driven Software Engineer, I specialize in
             developing innovative and efficient software solutions that drive
             business success. With a strong foundation in both front-end and
@@ -69,7 +69,7 @@ export default function About() {
             using the MERN stack (MongoDB, Express, React, Node.js) and other
             cutting-edge technologies.
           </p>
-          <p className="text-lg">
+          <p className="text-lg sm:text-lg mb-4">
             My journey in technology has been marked by a commitment to
             continuous learning and a dedication to excellence. From my early
             days providing technical support and managing e-commerce platforms
@@ -83,69 +83,111 @@ export default function About() {
           <img
             src="/HeroImage.png" // Replace with the path to your image
             alt="Miguel Ureña"
-            className="rounded-full w-80 h-80 object-cover"
+            className="rounded-full w-60 sm:w-80 h-60 sm:h-80 object-cover"
           />
         </div>
       </div>
 
       {/* Skills Carousel */}
-      <div className="skills-carousel py-10">
-        <h3 className="text-3xl font-bold mb-6 text-center">Skills</h3>
+      <div className="skills-carousel py-8 sm:py-10">
+        <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center">
+          Skills
+        </h3>
         <Slider {...settings}>
-          <div className="skill-item">
-            <FaHtml5 className="text-red-500" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <FaHtml5 aria-label="HTML" className="text-red-500" size={40} />
             <p className="text-black dark:text-white">HTML</p>
           </div>
-          <div className="skill-item">
-            <FaCss3Alt className="text-blue-500" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <FaCss3Alt aria-label="CSS" className="text-blue-500" size={40} />
             <p className="text-black dark:text-white">CSS</p>
           </div>
-          <div className="skill-item">
-            <FaJsSquare className="text-yellow-500" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <FaJsSquare
+              aria-label="JavaScript"
+              className="text-yellow-500"
+              size={40}
+            />
             <p className="text-black dark:text-white">JavaScript</p>
           </div>
-          <div className="skill-item">
-            <FaReact className="text-blue-300" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <FaReact aria-label="React" className="text-blue-300" size={40} />
             <p className="text-black dark:text-white">React</p>
           </div>
-          <div className="skill-item">
-            <FaBootstrap className="text-purple-600" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <FaBootstrap
+              aria-label="Bootstrap"
+              className="text-purple-600"
+              size={40}
+            />
             <p className="text-black dark:text-white">Bootstrap</p>
           </div>
-          <div className="skill-item">
-            <SiTailwindcss className="text-blue-400" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <SiTailwindcss
+              aria-label="Tailwind CSS"
+              className="text-blue-400"
+              size={40}
+            />
             <p className="text-black dark:text-white">Tailwind CSS</p>
           </div>
-          <div className="skill-item">
-            <FaNodeJs className="text-green-500" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <FaNodeJs
+              aria-label="Node.js"
+              className="text-green-500"
+              size={40}
+            />
             <p className="text-black dark:text-white">Node.js</p>
           </div>
-          <div className="skill-item">
-            <SiMongodb className="text-green-400" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <SiMongodb
+              aria-label="MongoDB"
+              className="text-green-400"
+              size={40}
+            />
             <p className="text-black dark:text-white">MongoDB</p>
           </div>
-          <div className="skill-item">
-            <FaPython className="text-yellow-500" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <FaPython
+              aria-label="Python"
+              className="text-yellow-500"
+              size={40}
+            />
             <p className="text-black dark:text-white">Python</p>
           </div>
-          <div className="skill-item">
-            <SiDjango className="text-black dark:text-white" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <SiDjango
+              aria-label="Django"
+              className="text-black dark:text-white"
+              size={40}
+            />
             <p className="text-black dark:text-white">Django</p>
           </div>
-          <div className="skill-item">
-            <SiPostgresql className="text-blue-600" size={40} />
-            <p className="text-black dark:text-white">Postgres</p>
+          <div className="skill-item flex flex-col items-center">
+            <SiPostgresql
+              aria-label="PostgreSQL"
+              className="text-blue-600"
+              size={40}
+            />
+            <p className="text-black dark:text-white">PostgreSQL</p>
           </div>
-          <div className="skill-item">
-            <FaGithub className="text-black dark:text-white" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <FaGithub
+              aria-label="GitHub"
+              className="text-black dark:text-white"
+              size={40}
+            />
             <p className="text-black dark:text-white">GitHub</p>
           </div>
-          <div className="skill-item">
-            <FaAws className="text-orange-500" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <FaAws aria-label="AWS" className="text-orange-500" size={40} />
             <p className="text-black dark:text-white">AWS</p>
           </div>
-          <div className="skill-item">
-            <DiHeroku className="text-purple-800" size={40} />
+          <div className="skill-item flex flex-col items-center">
+            <DiHeroku
+              aria-label="Heroku"
+              className="text-purple-800"
+              size={40}
+            />
             <p className="text-black dark:text-white">Heroku</p>
           </div>
         </Slider>
