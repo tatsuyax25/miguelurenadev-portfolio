@@ -1,6 +1,6 @@
 # Miguel Ureña Portfolio
 
-## Welcome to My Portfolio!
+## Welcome!
 
 Hey there! 👋 Thanks for checking out my personal portfolio website. This project is a representation of my skills, creativity, and passion for software development. Built with **Next.js**, **React**, **Tailwind CSS**, and **MongoDB**, this portfolio is more than just a showcase—it's a demonstration of my work, my journey, and how I approach development challenges.
 
