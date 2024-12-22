@@ -22,7 +22,8 @@ export default function Contact() {
     try {
       console.log("Sending Data:", formData);
 
-      const res = await fetch("/api/sendEmail", {
+      // Make sure the correct API endpoint is used
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,16 +32,16 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        setStatus("Email sent successfully!");
+        setStatus("Message sent successfully!");
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
         const errorData = await res.json();
         console.error("Error response:", errorData);
-        setStatus(`Error: ${errorData.message || "Error sending email."}`);
+        setStatus(`Error: ${errorData.message || "Error sending message."}`);
       }
     } catch (error) {
       console.error("Error:", error);
-      setStatus("Error sending email.");
+      setStatus("Error sending message.");
     }
   };
 
