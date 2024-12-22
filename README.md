@@ -1,37 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Miguel Ureña Portfolio
 
-## Getting Started
+This is my personal portfolio website built using **Next.js**, **React**, **Tailwind CSS**, and **MongoDB** for contact form submission. It includes a modern, responsive design with dark mode support and Google Analytics integration to track user interactions.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Personal Information**: Display your personal info, skills, projects, and contact details.
+- **Dark Mode**: Toggle between light and dark modes for a better user experience.
+- **Responsive Design**: Mobile-friendly layout optimized for all screen sizes.
+- **Contact Form**: Users can contact you via an integrated form that sends submissions to your email using MongoDB.
+- **Social Media Links**: Direct links to your social media profiles (LinkedIn, GitHub).
+- **Google Analytics**: Tracks page views and user interaction.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Frontend**: React, Next.js, Tailwind CSS, Font Awesome, Slick Carousel
+- **Backend**: MongoDB for contact form submissions
+- **Analytics**: Google Analytics for tracking user data
+- **Deployment**: Deployed using Vercel or your chosen platform
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# miguelurenadev-portfolio
