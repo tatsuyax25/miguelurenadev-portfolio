@@ -1,33 +1,47 @@
 import { useEffect } from "react";
+import { useRouter } from "next/router";
+import * as gtag from "../lib/gtag";
 import "../styles/globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function MyApp({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
+  const router = useRouter();
+
   useEffect(() => {
-    // Initialize Google Analytics
-    const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-CQ8CKJ4TK8";
-    script.async = true;
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        window.dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-CQ8CKJ4TK8"); // Replace with your actual Measurement ID
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
     };
 
+    router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
-      // Cleanup by removing the script when component unmounts
-      document.head.removeChild(script);
+      router.events.off("routeChangeComplete", handleRouteChange);
     };
-  }, []);
+  }, [router.events]);
 
-  return <Component {...pageProps} />;
-}
+  return (
+    <>
+      {/* Google Analytics Script */}
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+      <Component {...pageProps} />
+    </>
+  );
+};
 
-export default MyApp;
+export default App;

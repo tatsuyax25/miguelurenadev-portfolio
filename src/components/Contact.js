@@ -22,7 +22,6 @@ export default function Contact() {
     try {
       console.log("Sending Data:", formData);
 
-      // Make sure the correct API endpoint is used
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -44,6 +43,7 @@ export default function Contact() {
       setStatus("Error sending message.");
     }
   };
+
 
   return (
     <section
