@@ -1,14 +1,11 @@
-import { MongoClient } from "mongodb";
+import fs from "fs";
+import path from "path";
 
-const uri = process.env.MONGODB_URI; // MongoDB connection string
-let cachedClient = null; // Cache the MongoDB client for reuse
+const dataFilePath = path.join(process.cwd(), "data", "contacts.json"); // File to store the data
 
-async function connectToDatabase() {
-  if (cachedClient) return cachedClient; // Reuse the cached client
-  const client = new MongoClient(uri);
-  await client.connect(); // Establish connection if not cached
-  cachedClient = client; // Cache the client
-  return client;
+// Ensure the data directory exists
+if (!fs.existsSync(path.dirname(dataFilePath))) {
+  fs.mkdirSync(path.dirname(dataFilePath), { recursive: true });
 }
 
 export default async function handler(req, res) {
@@ -20,20 +17,28 @@ export default async function handler(req, res) {
     }
 
     try {
-      const client = await connectToDatabase();
-      const database = client.db("portfolio"); // Specify your database name
-      const collection = database.collection("contacts"); // Specify the collection
-
-      // Insert the form data into the collection
-      const result = await collection.insertOne({
+      const newEntry = {
         name,
         email,
         subject,
         message,
         createdAt: new Date(),
-      });
+      };
 
-      console.log("Data inserted:", result); // Debugging log
+      // Read existing data
+      let existingData = [];
+      if (fs.existsSync(dataFilePath)) {
+        const rawData = fs.readFileSync(dataFilePath);
+        existingData = JSON.parse(rawData);
+      }
+
+      // Add the new entry
+      existingData.push(newEntry);
+
+      // Save the updated data back to the file
+      fs.writeFileSync(dataFilePath, JSON.stringify(existingData, null, 2));
+
+      console.log("Data saved:", newEntry); // Debugging log
       res.status(200).json({ message: "Data successfully stored!" });
     } catch (error) {
       console.error("Error saving data:", error); // Log detailed error
