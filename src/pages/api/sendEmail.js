@@ -3,43 +3,35 @@ import nodemailer from "nodemailer";
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { name, email, subject, message } = req.body;
-    console.log("Form Data Received:", { name, email, subject, message }); // Log the received form data
-    console.log("EMAIL_USER:", process.env.EMAIL_USER);
-    console.log("EMAIL_PASS:", process.env.EMAIL_PASS);
 
-    // Configure your Nodemailer transporter for Gmail
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      host: "smtp.gmail.com",
-      port: 587,
-      secure: false, // Use TLS
-      auth: {
-        user: process.env.EMAIL_USER, // Your Gmail address
-        pass: process.env.EMAIL_PASS, // App password or Gmail password (if less secure apps are enabled)
-      },
-      logger: true, // Enable logging
-      debug: true, // Enable debug output
-    });
-
-    // Define email options
-    const mailOptions = {
-      from: `${name} <${email}>`, // Sender's name and email
-      to: process.env.EMAIL_USER, // Your own email
-      replyTo: email, // Reply to the user's email
-      subject: `Contact Form: ${subject}`,
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}\n`,
-    };
+    if (!name || !email || !subject || !message) {
+      return res.status(400).json({ error: "All fields are required." });
+    }
 
     try {
-      // Attempt to send the email
-      const info = await transporter.sendMail(mailOptions);
-      console.log("Email sent successfully::", info.response);
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+
+      const mailOptions = {
+        from: `${name} <${email}>`,
+        to: process.env.EMAIL_USER,
+        replyTo: email,
+        subject: `Contact Form: ${subject}`,
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      };
+
+      await transporter.sendMail(mailOptions);
       res.status(200).json({ message: "Email sent successfully!" });
     } catch (error) {
       console.error("Error sending email:", error);
-      res.status(500).json({ error: "Error sending email.", details: error });
+      res.status(500).json({ error: "Failed to send email." });
     }
   } else {
-    res.status(405).json(({ message: "Method not allowed" }));
+    res.status(405).json({ message: "Method not allowed" });
   }
 }
