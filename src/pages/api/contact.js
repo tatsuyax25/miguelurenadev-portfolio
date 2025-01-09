@@ -37,8 +37,9 @@ export default async function handler(req, res) {
 
       // Send the email
       const info = await transporter.sendMail({
-        from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`, // Sender's email
+        from: `"${name}" <${process.env.EMAIL_USER}>`, // Sender's email
         to: process.env.EMAIL_USER, // Recipient's email (could be the same as the sender)
+        replyTo: email, // Sender's email for replies
         subject: `New Contact Form Submission: ${subject}`,
         text: `You have received a new message from ${name} (${email}):\n\n${message}`,
       });
