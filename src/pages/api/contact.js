@@ -46,14 +46,15 @@ export default async function handler(req, res) {
       console.log("Email sent successfully", info.response);
       res.status(200).json({ message: "Message sent successfully!" });
     } catch (error) {
-      console.error("Error in sending email:", error);
+      console.error("SMTP error:", error.message, error.stack);
 
       // More detailed error logging
       console.error("Error details:", error.response || error.message || error);
-      
-      res
-        .status(500)
-        .json({ message: "Failed to send message", error: error.message });
+
+      res.status(500).json({
+        message: "Failed to send message",
+        error: error.message || "Unknown error",
+      });
     }
   } else {
     res.setHeader("Allow", ["POST"]);
