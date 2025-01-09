@@ -1,19 +1,33 @@
 import fs from "fs";
 import path from "path";
 
-const dataFilePath = path.join(process.cwd(), "data", "contacts.json"); // File to store the data
+const dataFilePath = path.join(process.cwd(), "data", "contacts.json");
 
-// Ensure the data directory exists
 if (!fs.existsSync(path.dirname(dataFilePath))) {
   fs.mkdirSync(path.dirname(dataFilePath), { recursive: true });
 }
 
 export default async function handler(req, res) {
+  // Handle OPTIONS request for CORS
+  if (req.method === "OPTIONS") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    res.status(204).end();
+    return;
+  }
+
   if (req.method === "POST") {
     const { name, email, subject, message } = req.body;
 
+    // Validate input
     if (!name || !email || !subject || !message) {
       return res.status(400).json({ message: "Missing required fields" });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ message: "Invalid email format" });
     }
 
     try {
@@ -25,28 +39,32 @@ export default async function handler(req, res) {
         createdAt: new Date(),
       };
 
-      // Read existing data
       let existingData = [];
-      if (fs.existsSync(dataFilePath)) {
-        const rawData = fs.readFileSync(dataFilePath);
-        existingData = JSON.parse(rawData);
+      try {
+        if (fs.existsSync(dataFilePath)) {
+          const rawData = fs.readFileSync(dataFilePath, "utf-8");
+          existingData = JSON.parse(rawData);
+        }
+      } catch (error) {
+        console.error("Error reading data file:", error);
+        existingData = []; // Default to an empty array
       }
 
-      // Add the new entry
       existingData.push(newEntry);
 
-      // Save the updated data back to the file
+      // Write updated data back to file
       fs.writeFileSync(dataFilePath, JSON.stringify(existingData, null, 2));
+      console.log("Data saved:", newEntry);
 
-      console.log("Data saved:", newEntry); // Debugging log
       res.status(200).json({ message: "Data successfully stored!" });
     } catch (error) {
-      console.error("Error saving data:", error); // Log detailed error
+      console.error("Error in saving data:", error);
       res
         .status(500)
-        .json({ message: "Error saving data", error: error.message });
+        .json({ message: "Failed to save data", error: error.message });
     }
   } else {
+    res.setHeader("Allow", ["POST"]);
     res.status(405).json({ message: "Method not allowed" });
   }
 }
