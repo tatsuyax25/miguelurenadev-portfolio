@@ -9,6 +9,14 @@ export default function Projects() {
       image: "/images/PlantivityV2.png",
     },
     {
+      title: "Pocket Web Calculator",
+      description:
+        "A responsive and accessible calculator built with HTML, CSS, and JavaScript. This project provides a clean user interface and performs basic arithmetic operations.",
+      live: "https://pocketwebcalculator.netlify.app",
+      link: "https://github.com/tatsuyax25/simplecalculator",
+      image: "/images/simplecalculator.png",
+    },
+    {
       title: "Snake Web Game JS",
       description:
         "Navigate the snake to eat food, avoid walls and its own body, and achieve the highest score possible. Each piece of food increases the snake's length, adding to the challenge.",
