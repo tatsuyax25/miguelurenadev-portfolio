@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 export default function Projects() {
   const projects = [
@@ -50,34 +53,36 @@ export default function Projects() {
         {projects.map((project) => (
           <article
             key={project.id}
-            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-lg shadow-lg transition-shadow duration-300"
+            className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
           >
             <Image
               src={project.image}
               alt={`${project.title} Screenshot`}
-              layout="responsive"
-              width={400} // Adjust width based on your layout
-              height={300} // Adjust height based on your layout
+              width={400}
+              height={300}
               className="rounded-md mb-4"
             />
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold">{project.title}</h3>
-              <p className="text-lg">{project.description}</p>
+            <div className="flex-grow">
+              <h3 className="text-2xl font-semibold mt-2">{project.title}</h3>
+              <p className="text-lg mt-3">{project.description}</p>
+            </div>
+            {/* Adjusted position and spacing for the icons */}
+            <div className="mt-4 flex justify-center space-x-4">
               <a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-700 transition-colors"
+                className="text-green-500 hover:text-green-700 transition-colors text-2xl"
               >
-                Live Demo
+                <FontAwesomeIcon icon={faExternalLinkAlt} />
               </a>
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-700 transition-colors"
+                className="text-black dark:text-white hover:text-gray-800 dark:hover:text-gray-300 transition-colors text-2xl"
               >
-                GitHub Repo
+                <FontAwesomeIcon icon={faGithub} />
               </a>
             </div>
           </article>
