@@ -7,6 +7,15 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
+      title: "Portfolio",
+      description:
+        "This header features a responsive layout with navigation links, a dark mode toggle, and a resume button. On mobile, a hamburger menu appears to optimize screen space.",
+      live: "https://miguelurenaportfolio.netlify.app",
+      link: "https://github.com/tatsuyax25/miguelurenadev-portfolio",
+      image: "/images/portfoliov2.png",
+    },
+    {
+      id: 2,
       title: "Plantivity",
       description:
         "Plantivity motivates users by completing their daily self-care tasks and rewarding them with a badge. They assign themselves their three daily tasks and points, which help your self-care plant grow!",
@@ -15,7 +24,7 @@ export default function Projects() {
       image: "/images/PlantivityV2.png",
     },
     {
-      id: 2,
+      id: 3,
       title: "Pocket Web Calculator",
       description:
         "A responsive and accessible calculator built with HTML, CSS, and JavaScript. This project provides a clean user interface and performs basic arithmetic operations.",
@@ -24,7 +33,7 @@ export default function Projects() {
       image: "/images/simplecalculator.png",
     },
     {
-      id: 3,
+      id: 4,
       title: "Snake Web Game JS",
       description:
         "Navigate the snake to eat food, avoid walls and its own body, and achieve the highest score possible. Each piece of food increases the snake's length, adding to the challenge.",
@@ -33,7 +42,7 @@ export default function Projects() {
       image: "/images/snakeWebGameJS.png",
     },
     {
-      id: 4,
+      id: 5,
       title: "Connect 4 Web Game",
       description:
         "Connect Four is a game you play against the computer. Take turns dropping colored discs into a vertical grid. The first to get four of their discs in a row, either horizontally, vertically, or diagonally, wins the game.",

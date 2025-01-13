@@ -13,17 +13,17 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-gray-100/90 dark:bg-gray-800/90 dark:text-white px-4 z-50 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
+    <header className="fixed top-0 left-0 w-full bg-gray-100/90 dark:bg-gray-800/90 dark:text-white px-4 z-50 shadow-md h-16">
+      <div className="container mx-auto flex justify-between items-center h-full">
         {/* Title */}
         <h1 className="text-lg font-bold whitespace-nowrap">
           Miguel Ureña Portfolio
         </h1>
 
-        {/* Hamburger Menu Button */}
+        {/* Hamburger Menu Button (Mobile) */}
         <button
           onClick={toggleMenu}
-          className="block sm:hidden text-xl"
+          className="sm:hidden text-xl"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? <FaTimes /> : <FaBars />}
@@ -84,9 +84,9 @@ export default function Header() {
             href="https://drive.google.com/file/d/1OLekxMTdoQf1_KWdXwo3XFXcgrExrcmL/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:flex items-center bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
+            className="hidden sm:flex items-center bg-blue-500 text-white px-3 py-1.5 text-sm rounded hover:bg-blue-600 transition-colors"
           >
-            <FaFileAlt className="mr-2" /> Resume
+            <FaFileAlt className="mr-2 text-base" /> Resume
           </a>
         </div>
       </div>
@@ -95,7 +95,7 @@ export default function Header() {
       <div
         className={`fixed top-0 right-0 h-full bg-gray-100 dark:bg-gray-800 shadow-lg transform transition-transform duration-300 ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
-        } w-64 z-40`}
+        } w-64 z-40 sm:hidden`}
       >
         <nav className="flex flex-col items-start p-4 space-y-4">
           <a
