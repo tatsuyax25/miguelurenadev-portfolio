@@ -81,7 +81,7 @@ export default function Header() {
 
           {/* Resume Button */}
           <a
-            href="https://drive.google.com/file/d/1OLekxMTdoQf1_KWdXwo3XFXcgrExrcmL/view?usp=sharing"
+            href="https://drive.google.com/file/d/1pCiMljnegSNSIr2bVuB2TH-HsF1S8Gwb/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:flex items-center bg-blue-500 text-white px-3 py-1.5 text-sm rounded hover:bg-blue-600 transition-colors"
