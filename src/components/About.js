@@ -9,12 +9,17 @@ import {
   FaPython,
   FaGithub,
   FaAws,
+  FaNode,
 } from "react-icons/fa";
 import {
   SiMongodb,
   SiTailwindcss,
   SiPostgresql,
   SiDjango,
+  SiExpress,
+  SiNetlify,
+  SiNextdotjs,
+  SiGoogleanalytics,
 } from "react-icons/si";
 import { DiHeroku } from "react-icons/di";
 
@@ -139,6 +144,14 @@ export default function About() {
             <p className="text-black dark:text-white">Node.js</p>
           </div>
           <div className="skill-item flex flex-col items-center">
+            <SiExpress
+              aria-label="Express.js"
+              className="text-black dark:text-white"
+              size={40}
+            />
+            <p className="text-black dark:text-white">Express.js</p>
+          </div>
+          <div className="skill-item flex flex-col items-center">
             <SiMongodb
               aria-label="MongoDB"
               className="text-green-400"
@@ -189,6 +202,30 @@ export default function About() {
               size={40}
             />
             <p className="text-black dark:text-white">Heroku</p>
+          </div>
+          <div className="skill-item flex flex-col items-center">
+            <SiNextdotjs
+              aria-label="Next.js"
+              className="text-black dark:text-white"
+              size={40}
+            />
+            <p className="text-black dark:text-white">Next.js</p>
+          </div>
+          <div className="skill-item flex flex-col items-center">
+            <SiGoogleanalytics
+              aria-label="Google Analytics"
+              className="text-yellow-500"
+              size={40}
+            />
+            <p className="text-black dark:text-white">Google Analytics</p>
+          </div>
+          <div className="skill-item flex flex-col items-center">
+            <SiNetlify
+              aria-label="Netlify"
+              className="text-teal-500"
+              size={40}
+            />
+            <p className="text-black dark:text-white">Netlify</p>
           </div>
         </Slider>
       </div>
