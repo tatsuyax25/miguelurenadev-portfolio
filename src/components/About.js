@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Slider from "react-slick";
 import {
   FaHtml5,
@@ -9,13 +10,13 @@ import {
   FaPython,
   FaGithub,
   FaAws,
-  FaNode,
 } from "react-icons/fa";
 import {
   SiMongodb,
   SiTailwindcss,
   SiPostgresql,
   SiDjango,
+  SiNpm,
   SiExpress,
   SiNetlify,
   SiNextdotjs,
@@ -85,10 +86,12 @@ export default function About() {
 
         {/* Hero Image */}
         <div className="md:w-1/2 flex justify-center">
-          <img
+          <Image
             src="/HeroImage.png" // Replace with the path to your image
             alt="Miguel Ureña"
-            className="rounded-full w-60 sm:w-80 h-60 sm:h-80 object-cover"
+            width={320} // Specify the width (corresponds to w-60)
+            height={320} // Specify the height (corresponds to h-60)
+            className="rounded-full object-cover"
           />
         </div>
       </div>
@@ -150,6 +153,14 @@ export default function About() {
               size={40}
             />
             <p className="text-black dark:text-white">Express.js</p>
+          </div>
+          <div className="skill-item flex flex-col items-center">
+            <SiNpm
+              aria-label="NPM"
+              className="text-red-600"
+              size={40}
+            />
+            <p className="text-black dark:text-white">NPM</p>
           </div>
           <div className="skill-item flex flex-col items-center">
             <SiMongodb
