@@ -18,6 +18,7 @@ import {
   SiDjango,
   SiNpm,
   SiExpress,
+  SiGooglecloud,
   SiNetlify,
   SiNextdotjs,
   SiGoogleanalytics,
@@ -155,11 +156,7 @@ export default function About() {
             <p className="text-black dark:text-white">Express.js</p>
           </div>
           <div className="skill-item flex flex-col items-center">
-            <SiNpm
-              aria-label="NPM"
-              className="text-red-600"
-              size={40}
-            />
+            <SiNpm aria-label="NPM" className="text-red-600" size={40} />
             <p className="text-black dark:text-white">NPM</p>
           </div>
           <div className="skill-item flex flex-col items-center">
@@ -213,6 +210,14 @@ export default function About() {
               size={40}
             />
             <p className="text-black dark:text-white">Heroku</p>
+          </div>
+          <div className="skill-item flex flex-col items-center">
+            <SiGooglecloud
+              aria-label="Google Cloud"
+              className="text-blue-600"
+              size={40}
+            />
+            <p className="text-black dark:text-white">Google Cloud</p>
           </div>
           <div className="skill-item flex flex-col items-center">
             <SiNextdotjs
