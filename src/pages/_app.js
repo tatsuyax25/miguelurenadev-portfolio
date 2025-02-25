@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../styles/globals.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "slick-carousel/slick/slick.css";
@@ -39,6 +40,7 @@ const App = ({ Component, pageProps }) => {
           `,
         }}
       />
+      <SpeedInsights />
       <Component {...pageProps} />
     </>
   );
