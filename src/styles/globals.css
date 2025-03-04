@@ -17,12 +17,32 @@ html, body {
   padding: 0;
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
 /* Base styles */
 body {
-  @apply bg-gray-100 text-black font-sans; /* Default light mode */
-  min-height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
+  background: linear-gradient(135deg, #0D9488, #2563EB);
+  background-size: 300% 300%;
+  animation: gradientAnimation 8s ease infinite;
+}
+
+/* Apply a different gradient for dark mode */
+body.dark {
+  background: linear-gradient(135deg, #111827, #1f2937);
+  color: white;
 }
 
 body.dark #about {
@@ -31,7 +51,7 @@ body.dark #about {
 }
 
 section {
-  @apply py-16 px-4 bg-gray-100 text-black h-full;
+  background-color: transparent !important; /* Ensure all sections are transparent */
 }
 
 /* Dark Mode Styles */
@@ -40,7 +60,7 @@ html.dark {
 }
 
 html.dark section {
-  @apply bg-gray-900 text-white;
+  @apply text-white bg-transparent;
 }
 
 html.dark section #about {
