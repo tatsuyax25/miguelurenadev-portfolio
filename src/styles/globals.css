@@ -79,7 +79,7 @@ html.dark .skills-carousel {
 
 /* Footer styles */
 footer {
-  @apply w-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-4 text-center mt-0;
+  @apply w-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-2 text-center mt-0;
 }
 
 /* Fix possible padding/margin in the Contact section */
