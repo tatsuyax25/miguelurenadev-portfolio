@@ -27,7 +27,7 @@ export default function Header() {
     <>
       {/* Top Left Logo */}
       <header className="fixed top-4 left-4 z-50">
-        <img src="/portfolio-logo.png" alt="Logo" className="w-10 h-10 rounded-full object-cover" />
+        <img src="/portfolio-logo.png" alt="Logo" className="w-10 h-10" />
       </header>
 
       {/* Navbar */}
