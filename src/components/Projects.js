@@ -7,6 +7,15 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
+      title: "Cinema Search",
+      description:
+        "A modern movie discovery web app built with React.js, Appwrite, and Tailwind CSS. Cinema Search lets users search and browse movies, featuring a trending algorithm that tracks popular searches. Designed with a clean UI and responsive layout, this project highlights full-stack integration and real-time data handling.",
+      live: "https://cinemasearch.vercel.app",
+      link: "https://github.com/tatsuyax25/movieapp-reactjs",
+      image: "/images/MovieSearch.png",
+    },
+    {
+      id: 2,
       title: "Portfolio",
       description:
         "I’m excited to unveil my new portfolio, built with Next.js, React, and Tailwind CSS, showcasing a modern, responsive design with smooth transitions and a sleek dark mode. This update replaces my previous portfolio and highlights my skills in web development and UI design.",
@@ -15,7 +24,7 @@ export default function Projects() {
       image: "/images/portfoliov2.png",
     },
     {
-      id: 2,
+      id: 3,
       title: "Plantivity",
       description:
         "Plantivity motivates users by completing their daily self-care tasks and rewarding them with a badge. They assign themselves their three daily tasks and points, which help your self-care plant grow!",
@@ -24,7 +33,7 @@ export default function Projects() {
       image: "/images/PlantivityV2.png",
     },
     {
-      id: 3,
+      id: 4,
       title: "Pocket Web Calculator",
       description:
         "A responsive and accessible calculator built with HTML, CSS, and JavaScript. This project provides a clean user interface and performs basic arithmetic operations.",
@@ -33,7 +42,7 @@ export default function Projects() {
       image: "/images/simplecalculator.png",
     },
     {
-      id: 4,
+      id: 5,
       title: "Snake Web Game JS",
       description:
         "Navigate the snake to eat food, avoid walls and its own body, and achieve the highest score possible. Each piece of food increases the snake's length, adding to the challenge.",
@@ -42,7 +51,7 @@ export default function Projects() {
       image: "/images/snakeWebGameJS.png",
     },
     {
-      id: 5,
+      id: 6,
       title: "Connect 4 Web Game",
       description:
         "Connect Four is a game you play against the computer. Take turns dropping colored discs into a vertical grid. The first to get four of their discs in a row, either horizontally, vertically, or diagonally, wins the game.",
