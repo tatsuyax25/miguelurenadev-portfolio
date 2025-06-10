@@ -30,76 +30,49 @@ export default function Header() {
         <img
           src="/portfolio-logo4.png"
           alt="Logo"
-          className="w-10 h-10 bg-white dark:bg-gray-800"
+          className="w-10 h-10 bg-white dark:bg-gray-800 border-white dark:border-gray-700"
         />
       </header>
 
       {/* Navbar */}
-      {isMobile ? (
-        // Mobile Nav - keep as-is
-        <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 transform bg-white dark:bg-gray-800 text-black dark:text-white rounded-full shadow-lg px-6 py-2 flex gap-6 z-40">
-          <a
-            href="#home"
-            aria-label="Home"
-            className="hover:text-blue-500 transition"
-          >
-            <FaHome size={20} />
-          </a>
-          <a
-            href="#about"
-            aria-label="About"
-            className="hover:text-blue-500 transition"
-          >
-            <FaUser size={20} />
-          </a>
-          <a
-            href="#projects"
-            aria-label="Projects"
-            className="hover:text-blue-500 transition"
-          >
-            <FaProjectDiagram size={20} />
-          </a>
-          <a
-            href="#contact"
-            aria-label="Contact"
-            className="hover:text-blue-500 transition"
-          >
-            <FaEnvelope size={20} />
-          </a>
-        </nav>
-      ) : (
-        // Desktop Nav - enhanced style
-        <nav className="fixed top-4 left-1/2 -translate-x-1/2 transform bg-white/30 dark:bg-gray-900/30 backdrop-blur-md text-black dark:text-white rounded-xl shadow-lg px-8 py-3 flex gap-8 items-center z-40 border border-gray-200 dark:border-gray-700">
-          <a
-            href="#home"
-            className="flex items-center gap-2 hover:text-blue-500 transition"
-          >
-            <FaHome size={18} />
-            <span className="text-sm font-medium">Home</span>
-          </a>
-          <a
-            href="#about"
-            className="flex items-center gap-2 hover:text-blue-500 transition"
-          >
-            <FaUser size={18} />
-            <span className="text-sm font-medium">About</span>
-          </a>
-          <a
-            href="#projects"
-            className="flex items-center gap-2 hover:text-blue-500 transition"
-          >
-            <FaProjectDiagram size={18} />
-            <span className="text-sm font-medium">Projects</span>
-          </a>
-          <a
-            href="#contact"
-            className="flex items-center gap-2 hover:text-blue-500 transition"
-          >
-            <FaEnvelope size={18} />
-            <span className="text-sm font-medium">Contact</span>
-          </a>
-        </nav>
-      )}
+      <nav
+        className={`fixed top-4 left-1/2 -translate-x-1/2 transform ${
+          isMobile ? "px-5 py-2 gap-6" : "px-8 py-3 gap-8"
+        } flex items-center z-40 rounded-xl shadow-lg border border-white/30 dark:border-gray-700 text-black dark:text-white backdrop-blur-md bg-white/30 dark:bg-gray-900/30 transition-all`}
+      >
+        <a
+          href="#home"
+          aria-label="Home"
+          className="flex items-center gap-2 hover:text-blue-500 transition"
+        >
+          <FaHome size={18} />
+          {!isMobile && <span className="text-sm font-medium">Home</span>}
+        </a>
+        <a
+          href="#about"
+          aria-label="About"
+          className="flex items-center gap-2 hover:text-blue-500 transition"
+        >
+          <FaUser size={18} />
+          {!isMobile && <span className="text-sm font-medium">About</span>}
+        </a>
+        <a
+          href="#projects"
+          aria-label="Projects"
+          className="flex items-center gap-2 hover:text-blue-500 transition"
+        >
+          <FaProjectDiagram size={18} />
+          {!isMobile && <span className="text-sm font-medium">Projects</span>}
+        </a>
+        <a
+          href="#contact"
+          aria-label="Contact"
+          className="flex items-center gap-2 hover:text-blue-500 transition"
+        >
+          <FaEnvelope size={18} />
+          {!isMobile && <span className="text-sm font-medium">Contact</span>}
+        </a>
+      </nav>
 
       {/* Dark Mode Toggle - Top Right */}
       <div className="fixed top-4 right-4 z-50 flex items-center">
