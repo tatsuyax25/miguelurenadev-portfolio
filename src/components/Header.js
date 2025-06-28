@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import {
   FaHome,
   FaUser,
@@ -27,9 +29,11 @@ export default function Header() {
     <>
       {/* Top Left Logo */}
       <header className="fixed top-4 left-4 z-50">
-        <img
+        <Image
           src="/portfolio-logo4.png"
           alt="Logo"
+          width={40}
+          height={40}
           className="w-10 h-10 bg-white dark:bg-gray-800 border-white dark:border-gray-700"
         />
       </header>
@@ -72,6 +76,15 @@ export default function Header() {
           <FaEnvelope size={18} />
           {!isMobile && <span className="text-sm font-medium">Contact</span>}
         </a>
+        <a
+          href="https://drive.google.com/file/d/1pCiMljnegSNSIr2bVuB2TH-HsF1S8Gwb/view?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 hover:text-blue-500 transition"
+        >
+          <FaFileAlt size={18} />
+          {!isMobile && <span className="text-sm font-medium">Resume</span>}
+        </a>
       </nav>
 
       {/* Dark Mode Toggle - Top Right */}
@@ -93,22 +106,6 @@ export default function Header() {
           <FaMoon className="text-gray-500 dark:text-yellow-400" />
         </label>
       </div>
-
-      {/* Resume Button */}
-      <a
-        href="https://drive.google.com/file/d/1pCiMljnegSNSIr2bVuB2TH-HsF1S8Gwb/view?usp=sharing"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`fixed bottom-6 right-6 bg-blue-500 text-white ${
-          isMobile ? "p-3" : "px-4 py-2"
-        } rounded-full shadow-lg hover:bg-blue-600 transition z-50 flex items-center justify-center`}
-      >
-        <FaFileAlt
-          size={isMobile ? 20 : 16}
-          className={isMobile ? "" : "mr-2"}
-        />
-        {!isMobile && "Resume"}
-      </a>
     </>
   );
 }
