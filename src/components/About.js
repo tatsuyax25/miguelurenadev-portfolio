@@ -78,7 +78,7 @@ export default function About() {
           </div>
           <div className="p-2 font-mono text-xs text-green-400">
             <div>$ npm run dev</div>
-            <div>$ git commit -m "feat: portfolio"</div>
+            <div>$ git commit -m &quot;feat: portfolio&quot;</div>
           </div>
         </div>
         
@@ -96,9 +96,9 @@ export default function About() {
             <div className="font-mono text-sm text-cyan-600 dark:text-cyan-400 mb-4">
               <span className="text-green-500">const</span> <span className="text-blue-500">developer</span> = {
               <div className="ml-4">
-                <span className="text-purple-500">name:</span> <span className="text-yellow-500">"Miguel Ureña"</span>,<br/>
-                <span className="text-purple-500">role:</span> <span className="text-yellow-500">"Full-Stack Engineer"</span>,<br/>
-                <span className="text-purple-500">passion:</span> <span className="text-yellow-500">"Building amazing apps"</span>
+                <span className="text-purple-500">name:</span> <span className="text-yellow-500">&quot;Miguel Ureña&quot;</span>,<br/>
+                <span className="text-purple-500">role:</span> <span className="text-yellow-500">&quot;Full-Stack Engineer&quot;</span>,<br/>
+                <span className="text-purple-500">passion:</span> <span className="text-yellow-500">&quot;Building amazing apps&quot;</span>
               </div>
               };
             </div>
@@ -159,7 +159,7 @@ export default function About() {
             Tech Stack
           </h3>
           <div className="font-mono text-sm text-gray-600 dark:text-gray-400">
-            <span className="text-green-500">//</span> Technologies I work with daily
+            <span className="text-green-500">{"//"}</span> Technologies I work with daily
           </div>
         </div>
         

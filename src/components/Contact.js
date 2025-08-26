@@ -54,17 +54,17 @@ export default function Contact() {
         <div className="absolute top-20 left-20 w-32 h-32 border-2 border-cyan-500/20 rounded-lg rotate-45 animate-float"></div>
         <div className="absolute bottom-20 right-20 w-24 h-24 border-2 border-purple-500/20 rounded-lg rotate-12 animate-pulse"></div>
         <div className="absolute top-1/2 right-10 font-mono text-xs text-green-500/30 transform rotate-90">
-          console.log("Let's connect!");
+          console.log(&quot;Let&apos;s connect!&quot;);
         </div>
       </div>
       
       <div className="container mx-auto text-center relative z-10">
         <div className="mb-8">
           <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 dark:from-cyan-300 dark:via-blue-400 dark:to-purple-500 bg-clip-text text-transparent">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <div className="font-mono text-sm text-gray-600 dark:text-gray-400 mb-4">
-            <span className="text-green-500">//</span> Ready to build something amazing together?
+            <span className="text-green-500">{"//"}</span> Ready to build something amazing together?
           </div>
           <p className="text-lg text-gray-700 dark:text-gray-300">
             Feel free to reach out for opportunities, collaborations, or just to say hello!
@@ -118,7 +118,7 @@ export default function Contact() {
               value={formData.subject}
               onChange={handleChange}
               className="w-full p-4 rounded-lg bg-gray-50 dark:bg-gray-700 text-black dark:text-white border-2 border-gray-200 dark:border-gray-600 focus:outline-none focus:border-cyan-500 dark:focus:border-cyan-400 transition-all duration-300 hover:border-gray-300 dark:hover:border-gray-500"
-              placeholder="What's this about?"
+              placeholder="What&apos;s this about?"
               required
             />
           </div>
@@ -175,7 +175,7 @@ export default function Contact() {
         {/* Enhanced Social Links */}
         <div className="mt-16">
           <p className="text-gray-600 dark:text-gray-400 mb-8 font-mono text-sm">
-            <span className="text-green-500">//</span> Or connect with me on social media
+            <span className="text-green-500">{"//"}</span> Or connect with me on social media
           </p>
           <div className="flex justify-center space-x-6">
             <a

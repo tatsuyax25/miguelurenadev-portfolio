@@ -176,7 +176,7 @@ export default function Projects() {
           Featured Projects
         </h2>
         <div className="font-mono text-sm text-gray-600 dark:text-gray-400 mb-2">
-          <span className="text-green-500">//</span> Building the future, one project at a time
+          <span className="text-green-500">{"//"}</span> Building the future, one project at a time
         </div>
         <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-600 mx-auto rounded-full"></div>
       </div>

@@ -20,7 +20,7 @@ export default function Footer() {
           &lt;/footer&gt;
         </div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-mono text-xs">
-          console.log("Thanks for visiting!");
+          console.log(&quot;Thanks for visiting!&quot;);
         </div>
       </div>
       
@@ -40,7 +40,7 @@ export default function Footer() {
               Full-Stack Software Engineer passionate about creating amazing web experiences.
             </p>
             <div className="font-mono text-xs text-cyan-400">
-              <span className="text-green-400">const</span> <span className="text-blue-400">status</span> = <span className="text-yellow-400">"Available for hire"</span>;
+              <span className="text-green-400">const</span> <span className="text-blue-400">status</span> = <span className="text-yellow-400">&quot;Available for hire&quot;</span>;
             </div>
           </div>
           
@@ -91,7 +91,7 @@ export default function Footer() {
               </a>
             </div>
             <p className="text-gray-400 text-xs">
-              Let's build something amazing together!
+              Let&apos;s build something amazing together!
             </p>
           </div>
         </div>
