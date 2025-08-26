@@ -11,11 +11,17 @@
 - Simplified `next.config.mjs` to avoid webpack issues
 - Removed problematic MiniCssExtractPlugin dependency
 - Added proper image domain configuration
+- Added `unoptimized: true` for static hosting compatibility
 
 ### 3. Server-Side Rendering (SSR) Issues
 - Fixed NextRouter mounting issues in `_app.js`
 - Simplified app component to avoid SSR conflicts
 - Removed analytics code that was causing build failures
+
+### 4. Image Loading Issues on Netlify
+- Added `unoptimized: true` to Next.js config for static images
+- Updated Netlify configuration for proper asset handling
+- Added cache headers for optimal performance
 
 ## Deployment Instructions
 
