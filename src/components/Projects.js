@@ -23,6 +23,8 @@ export default function Projects() {
       live: "https://cinemasearch.vercel.app",
       link: "https://github.com/tatsuyax25/movieapp-reactjs",
       image: "/images/MovieSearch.png",
+      techStack: ["React", "Appwrite", "Tailwind CSS", "JavaScript"],
+      featured: true,
       codeSnippet: {
         title: "Movie Search with Trending Algorithm",
         code: `const searchMovies = async (query) => {
@@ -46,6 +48,8 @@ export default function Projects() {
       live: "https://miguelurenaportfolio.netlify.app",
       link: "https://github.com/tatsuyax25/miguelurenadev-portfolio",
       image: "/images/portfoliov2.png",
+      techStack: ["Next.js", "React", "Tailwind CSS", "Node.js"],
+      featured: true,
       codeSnippet: {
         title: "Dark Mode Toggle Implementation",
         code: `const toggleDarkMode = () => {
@@ -65,6 +69,7 @@ export default function Projects() {
       live: "https://plantivity.netlify.app",
       link: "https://github.com/tatsuyax25/team6-hackathon-fe",
       image: "/images/Plantivityv3.png",
+      techStack: ["React", "CSS", "JavaScript", "API"],
       codeSnippet: {
         title: "Task Completion Logic",
         code: `const completeTask = (taskId) => {
@@ -166,12 +171,21 @@ export default function Projects() {
           01010111 01101111 01110010 01101100 01100100
         </div>
       </div>
-      <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
+      <div className="text-center mb-12 relative z-10">
+        <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 dark:from-cyan-300 dark:via-blue-400 dark:to-purple-500 bg-clip-text text-transparent">
+          Featured Projects
+        </h2>
+        <div className="font-mono text-sm text-gray-600 dark:text-gray-400 mb-2">
+          <span className="text-green-500">//</span> Building the future, one project at a time
+        </div>
+        <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-600 mx-auto rounded-full"></div>
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <article
             key={project.id}
-            className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col overflow-hidden"
+            className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col overflow-hidden animate-fadeInUp"
+            style={{ animationDelay: `${index * 0.1}s` }}
           >
             {/* Gradient overlay on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -186,7 +200,29 @@ export default function Projects() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
             <div className="flex-grow relative z-10">
-              <h3 className="text-2xl font-bold mt-2 mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
+                {project.featured && (
+                  <span className="px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-bold rounded-full animate-pulse">
+                    FEATURED
+                  </span>
+                )}
+              </div>
+              
+              {/* Tech Stack Badges */}
+              {project.techStack && (
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {project.techStack.map((tech, index) => (
+                    <span 
+                      key={index}
+                      className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-md border border-gray-200 dark:border-gray-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
+              
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{project.description}</p>
             </div>
             
@@ -221,23 +257,25 @@ export default function Projects() {
               </div>
             )}
             
-            {/* Adjusted position and spacing for the icons */}
-            <div className="mt-4 flex justify-center space-x-4">
+            {/* Enhanced action buttons */}
+            <div className="mt-6 flex justify-center space-x-3">
               <a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-500 hover:text-green-700 transition-colors text-2xl"
+                className="flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-medium rounded-lg hover:from-green-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                <FontAwesomeIcon icon={faExternalLinkAlt} />
+                <FontAwesomeIcon icon={faExternalLinkAlt} className="mr-2" size="sm" />
+                Live Demo
               </a>
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black dark:text-white hover:text-gray-800 dark:hover:text-gray-300 transition-colors text-2xl"
+                className="flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white text-sm font-medium rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                <FontAwesomeIcon icon={faGithub} />
+                <FontAwesomeIcon icon={faGithub} className="mr-2" size="sm" />
+                Source Code
               </a>
             </div>
           </article>
