@@ -2,8 +2,18 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export default function Projects() {
+  const [showCode, setShowCode] = useState({});
+
+  const toggleCode = (projectId) => {
+    setShowCode(prev => ({
+      ...prev,
+      [projectId]: !prev[projectId]
+    }));
+  };
+
   const projects = [
     {
       id: 1,
@@ -13,15 +23,39 @@ export default function Projects() {
       live: "https://cinemasearch.vercel.app",
       link: "https://github.com/tatsuyax25/movieapp-reactjs",
       image: "/images/MovieSearch.png",
+      codeSnippet: {
+        title: "Movie Search with Trending Algorithm",
+        code: `const searchMovies = async (query) => {
+  const response = await databases.listDocuments(
+    DATABASE_ID, COLLECTION_ID,
+    [Query.search('title', query)]
+  );
+  
+  return response.documents.map(movie => ({
+    ...movie,
+    trending: calculateTrendingScore(movie)
+  }));
+};`
+      }
     },
     {
       id: 2,
       title: "Portfolio",
       description:
-        "I’m excited to unveil my new portfolio, built with Next.js, React, and Tailwind CSS, showcasing a modern, responsive design with smooth transitions and a sleek dark mode. This update replaces my previous portfolio and highlights my skills in web development and UI design.",
+        "I'm excited to unveil my new portfolio, built with Next.js, React, and Tailwind CSS, showcasing a modern, responsive design with smooth transitions and a sleek dark mode. This update replaces my previous portfolio and highlights my skills in web development and UI design.",
       live: "https://miguelurenaportfolio.netlify.app",
       link: "https://github.com/tatsuyax25/miguelurenadev-portfolio",
       image: "/images/portfoliov2.png",
+      codeSnippet: {
+        title: "Dark Mode Toggle Implementation",
+        code: `const toggleDarkMode = () => {
+  document.body.classList.toggle("dark");
+  localStorage.setItem(
+    'darkMode', 
+    document.body.classList.contains('dark')
+  );
+};`
+      }
     },
     {
       id: 3,
@@ -31,6 +65,17 @@ export default function Projects() {
       live: "https://plantivity.netlify.app",
       link: "https://github.com/tatsuyax25/team6-hackathon-fe",
       image: "/images/Plantivityv3.png",
+      codeSnippet: {
+        title: "Task Completion Logic",
+        code: `const completeTask = (taskId) => {
+  setTasks(prev => prev.map(task => 
+    task.id === taskId 
+      ? { ...task, completed: true }
+      : task
+  ));
+  updatePlantGrowth();
+};`
+      }
     },
     {
       id: 4,
@@ -40,6 +85,18 @@ export default function Projects() {
       live: "https://pocketwebcalculator.netlify.app",
       link: "https://github.com/tatsuyax25/simplecalculator",
       image: "/images/simplecalculator.png",
+      codeSnippet: {
+        title: "Calculator Logic",
+        code: `function calculate() {
+  try {
+    const result = eval(display.value);
+    display.value = result;
+    addToHistory(display.value + ' = ' + result);
+  } catch (error) {
+    display.value = 'Error';
+  }
+}`
+      }
     },
     {
       id: 5,
@@ -49,6 +106,22 @@ export default function Projects() {
       live: "https://snake-web-game-js.netlify.app",
       link: "https://github.com/tatsuyax25/snake-game-js",
       image: "/images/snakeWebGameJS.png",
+      codeSnippet: {
+        title: "Snake Movement Logic",
+        code: `function moveSnake() {
+  const head = { ...snake[0] };
+  
+  switch(direction) {
+    case 'UP': head.y -= 1; break;
+    case 'DOWN': head.y += 1; break;
+    case 'LEFT': head.x -= 1; break;
+    case 'RIGHT': head.x += 1; break;
+  }
+  
+  snake.unshift(head);
+  if (!ateFood) snake.pop();
+}`
+      }
     },
     {
       id: 6,
@@ -58,6 +131,21 @@ export default function Projects() {
       live: "https://connect-four-web-game.netlify.app",
       link: "https://github.com/tatsuyax25/connect-four",
       image: "/images/ConnectFour.png",
+      codeSnippet: {
+        title: "Win Detection Algorithm",
+        code: `function checkWin(board, row, col, player) {
+  const directions = [
+    [0, 1], [1, 0], [1, 1], [1, -1]
+  ];
+  
+  return directions.some(([dx, dy]) => {
+    let count = 1;
+    count += countDirection(board, row, col, dx, dy, player);
+    count += countDirection(board, row, col, -dx, -dy, player);
+    return count >= 4;
+  });
+}`
+      }
     },
   ];
 
@@ -84,6 +172,27 @@ export default function Projects() {
               <h3 className="text-2xl font-semibold mt-2">{project.title}</h3>
               <p className="text-lg mt-3">{project.description}</p>
             </div>
+            
+            {/* Code snippet section */}
+            {project.codeSnippet && (
+              <div className="mt-4">
+                <button 
+                  onClick={() => toggleCode(project.id)}
+                  className="text-blue-500 hover:text-blue-700 text-sm font-medium transition-colors"
+                >
+                  {showCode[project.id] ? 'Hide Code' : 'View Code Sample'}
+                </button>
+                {showCode[project.id] && (
+                  <div className="mt-3">
+                    <h4 className="text-sm font-semibold mb-2">{project.codeSnippet.title}</h4>
+                    <pre className="bg-gray-900 text-green-400 p-3 rounded-lg text-xs overflow-x-auto">
+                      <code>{project.codeSnippet.code}</code>
+                    </pre>
+                  </div>
+                )}
+              </div>
+            )}
+            
             {/* Adjusted position and spacing for the icons */}
             <div className="mt-4 flex justify-center space-x-4">
               <a

@@ -4,6 +4,9 @@ const require = createRequire(import.meta.url);
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 export default {
+  images: {
+    domains: ['github-readme-stats.vercel.app'],
+  },
   webpack(config, { dev, isServer }) {
     if (!isServer) {
       config.optimization.splitChunks = {

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Slider from "react-slick";
+import GitHubStats from "./GitHubStats";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -95,6 +96,11 @@ export default function About() {
             className="rounded-full object-cover"
           />
         </div>
+      </div>
+
+      {/* GitHub Stats */}
+      <div className="py-6">
+        <GitHubStats />
       </div>
 
       {/* Skills Carousel */}
@@ -245,6 +251,8 @@ export default function About() {
           </div>
         </Slider>
       </div>
+
+
     </section>
   );
 }
