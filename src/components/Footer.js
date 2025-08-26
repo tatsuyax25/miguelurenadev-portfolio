@@ -1,8 +1,13 @@
 import { FaLinkedin, FaGithub, FaEnvelope, FaHeart, FaCode } from "react-icons/fa";
 import { SiReact, SiNextdotjs, SiTailwindcss, SiNetlify } from "react-icons/si";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(2025);  // Default fallback
+  
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
   
   return (
     <footer className="w-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-gray-900 dark:via-black dark:to-gray-900 text-white relative overflow-hidden">

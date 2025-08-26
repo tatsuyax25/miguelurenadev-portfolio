@@ -33,10 +33,10 @@ export default function HomeSection() {
               style={{
                 left: `${i * 5}%`,
                 animationDelay: `${i * 0.1}s`,
-                animationDuration: `${3 + Math.random() * 2}s`
+                animationDuration: `${3 + (i % 3)}s`
               }}
             >
-              {['0', '1', '{', '}', '<', '>', '/', '\\', '|', '-'][Math.floor(Math.random() * 10)]}
+              {['0', '1', '{', '}', '<', '>', '/', '\\', '|', '-'][i % 10]}
             </div>
           ))}
         </div>

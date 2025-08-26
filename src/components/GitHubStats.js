@@ -2,15 +2,17 @@ import { useState, useEffect } from 'react';
 
 export default function GitHubStats() {
   const [stats, setStats] = useState(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     fetch('https://api.github.com/users/tatsuyax25')
       .then(res => res.json())
       .then(data => setStats(data))
       .catch(err => console.error('GitHub API error:', err));
   }, []);
 
-  if (!stats) return <div className="text-center py-2">Loading GitHub stats...</div>;
+  if (!mounted || !stats) return <div className="text-center py-2">Loading GitHub stats...</div>;
 
   return (
     <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg max-w-lg mx-auto">

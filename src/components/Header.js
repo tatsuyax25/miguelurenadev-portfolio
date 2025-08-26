@@ -13,17 +13,53 @@ import { useState, useEffect } from "react";
 
 export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  const toggleDarkMode = () => {
+    document.body.classList.toggle("dark");
+  };
 
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  const toggleDarkMode = () => {
-    document.body.classList.toggle("dark");
-  };
+  if (!mounted) {
+    return (
+      <>
+        <header className="fixed top-4 left-4 z-50">
+          <Image
+            src="/portfolio-logo4.png"
+            alt="Logo"
+            width={40}
+            height={40}
+            className="w-10 h-10 bg-white dark:bg-gray-800 border-white dark:border-gray-700"
+          />
+        </header>
+        <div className="fixed top-4 right-4 z-50 flex items-center">
+          <input
+            type="checkbox"
+            id="darkModeToggle"
+            className="hidden"
+            onChange={toggleDarkMode}
+          />
+          <label
+            htmlFor="darkModeToggle"
+            className="flex items-center cursor-pointer"
+          >
+            <FaSun className="text-yellow-500" />
+            <div className="relative w-10 h-6 bg-gray-300 dark:bg-gray-600 rounded-full mx-2">
+              <div className="dot absolute top-0.5 left-1 w-4 h-4 bg-white rounded-full transition-transform dark:translate-x-4"></div>
+            </div>
+            <FaMoon className="text-gray-500 dark:text-yellow-400" />
+          </label>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
