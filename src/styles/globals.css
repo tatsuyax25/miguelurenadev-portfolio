@@ -141,15 +141,34 @@ html.dark .skills-carousel {
   color: white;
 }
 
-/* Footer styles */
+/* Enhanced Footer styles */
 footer {
-  @apply w-full bg-gray-100 dark:bg-gray-800 text-black dark:text-white p-4 text-center mt-0;
+  margin-top: 0;
 }
 
-/* Fix possible padding/margin in the Contact section */
+/* Footer hover effects */
+footer a:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer tech icons animation */
+footer .tech-icon {
+  transition: all 0.3s ease;
+}
+
+footer .tech-icon:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Fix Contact section spacing */
 #contact {
   margin-bottom: 0;
-  padding-bottom: 0;
+  padding-bottom: 4rem;
+}
+
+/* Ensure proper spacing between Contact and Footer */
+#contact + footer {
+  margin-top: 2rem;
 }
 
 /* Header Styles */

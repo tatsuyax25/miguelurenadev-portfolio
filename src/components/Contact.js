@@ -173,8 +173,8 @@ export default function Contact() {
         </form>
         
         {/* Enhanced Social Links */}
-        <div className="mt-12">
-          <p className="text-gray-600 dark:text-gray-400 mb-6 font-mono text-sm">
+        <div className="mt-16">
+          <p className="text-gray-600 dark:text-gray-400 mb-8 font-mono text-sm">
             <span className="text-green-500">//</span> Or connect with me on social media
           </p>
           <div className="flex justify-center space-x-6">
