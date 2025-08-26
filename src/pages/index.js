@@ -14,7 +14,7 @@ export default function Home() {
         <title>Miguel Ureña Dev Portfolio</title>
       </Head>
       <Header />
-      <main className="flex flex-col items-center justify-center min-h-screen py-4">
+      <main className="flex flex-col items-center justify-start min-h-screen">
         <HomeSection />
         <About />
         <Projects />

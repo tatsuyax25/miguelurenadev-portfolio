@@ -63,9 +63,30 @@ export default function About() {
   return (
     <section
       id="about"
-      className="w-full bg-gray-100 dark:bg-gray-900 text-black dark:text-white py-20 sm:py-20 transition-colors duration-500"
+      className="w-full bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 text-black dark:text-white py-20 sm:py-20 transition-all duration-500 relative overflow-hidden"
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center md:justify-between p-4 sm:px-6">
+      {/* Tech background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full">
+        {/* Terminal window mockup */}
+        <div className="absolute top-10 right-10 w-64 h-40 bg-gray-900 rounded-lg border border-gray-700 opacity-20 animate-float">
+          <div className="flex items-center p-2 border-b border-gray-700">
+            <div className="flex space-x-1">
+              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+            </div>
+          </div>
+          <div className="p-2 font-mono text-xs text-green-400">
+            <div>$ npm run dev</div>
+            <div>$ git commit -m "feat: portfolio"</div>
+          </div>
+        </div>
+        
+        {/* Code brackets */}
+        <div className="absolute bottom-20 left-10 text-6xl font-mono text-blue-500/20 animate-pulse">{`{}`}</div>
+        <div className="absolute top-1/3 left-1/4 text-4xl font-mono text-green-500/20 rotate-12">&lt;/&gt;</div>
+      </div>
+      <div className="container mx-auto flex flex-col md:flex-row items-center md:justify-between p-4 sm:px-6 relative z-10">
         {/* Text Content */}
         <div className="md:w-1/2 text-center md:text-left mb-6 md:mb-0">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">About Me</h2>

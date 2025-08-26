@@ -152,25 +152,42 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="p-8 bg-gray-100 dark:bg-gray-900 dark:text-white"
+      className="p-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 dark:text-white relative"
     >
+      {/* Tech section decorations */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
+      
+      {/* Binary pattern background */}
+      <div className="absolute inset-0 overflow-hidden opacity-5">
+        <div className="absolute top-10 left-10 font-mono text-xs text-green-500 transform rotate-12">
+          01001000 01100101 01101100 01101100 01101111
+        </div>
+        <div className="absolute bottom-20 right-20 font-mono text-xs text-blue-500 transform -rotate-12">
+          01010111 01101111 01110010 01101100 01100100
+        </div>
+      </div>
       <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
           <article
             key={project.id}
-            className="relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col"
+            className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col overflow-hidden"
           >
-            <Image
-              src={project.image}
-              alt={`${project.title} Screenshot`}
-              width={400}
-              height={300}
-              className="rounded-md mb-4"
-            />
-            <div className="flex-grow">
-              <h3 className="text-2xl font-semibold mt-2">{project.title}</h3>
-              <p className="text-lg mt-3">{project.description}</p>
+            {/* Gradient overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative overflow-hidden rounded-lg mb-4">
+              <Image
+                src={project.image}
+                alt={`${project.title} Screenshot`}
+                width={400}
+                height={300}
+                className="rounded-lg group-hover:scale-105 transition-transform duration-300"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+            <div className="flex-grow relative z-10">
+              <h3 className="text-2xl font-bold mt-2 mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{project.description}</p>
             </div>
             
             {/* Code snippet section */}
@@ -184,10 +201,21 @@ export default function Projects() {
                 </button>
                 {showCode[project.id] && (
                   <div className="mt-3">
-                    <h4 className="text-sm font-semibold mb-2">{project.codeSnippet.title}</h4>
-                    <pre className="bg-gray-900 text-green-400 p-3 rounded-lg text-xs overflow-x-auto">
-                      <code>{project.codeSnippet.code}</code>
-                    </pre>
+                    <h4 className="text-sm font-semibold mb-2 text-cyan-600 dark:text-cyan-400">{project.codeSnippet.title}</h4>
+                    <div className="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden code-glow">
+                      {/* Terminal header */}
+                      <div className="flex items-center justify-between px-3 py-2 bg-gray-800 border-b border-gray-700">
+                        <div className="flex space-x-1">
+                          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        </div>
+                        <span className="text-xs text-gray-400 font-mono">code.js</span>
+                      </div>
+                      <pre className="text-green-400 p-3 text-xs overflow-x-auto font-mono">
+                        <code>{project.codeSnippet.code}</code>
+                      </pre>
+                    </div>
                   </div>
                 )}
               </div>
