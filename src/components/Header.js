@@ -23,7 +23,7 @@ export default function Header() {
 
   useEffect(() => {
     setMounted(true);
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     
@@ -93,12 +93,13 @@ export default function Header() {
     <>
 
 
-      {/* Enhanced Navbar */}
+      {/* Responsive Navbar */}
       {isMobile ? (
-        <nav className={`fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] max-w-md px-4 py-3 rounded-2xl shadow-2xl backdrop-blur-md border z-40 flex justify-between items-center transition-all duration-300 ${
+        /* Mobile & Tablet Navigation - Bottom */
+        <nav className={`fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-lg px-3 py-3 rounded-2xl shadow-2xl backdrop-blur-md border z-40 flex justify-between items-center transition-all duration-300 safe-area-pb-4 ${
           isScrolled 
-            ? 'bg-white/90 dark:bg-gray-900/90 border-gray-200/50 dark:border-gray-700/50' 
-            : 'bg-white/70 dark:bg-gray-900/70 border-white/30 dark:border-gray-700/30'
+            ? 'bg-white/95 dark:bg-gray-900/95 border-gray-200/60 dark:border-gray-700/60' 
+            : 'bg-white/80 dark:bg-gray-900/80 border-white/40 dark:border-gray-700/40'
         }`}>
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -108,15 +109,16 @@ export default function Header() {
                 key={item.id}
                 href={`#${item.id}`}
                 aria-label={item.label}
-                className={`relative p-3 rounded-xl transition-all duration-300 ${
+                className={`relative flex flex-col items-center gap-1 p-2.5 rounded-xl transition-all duration-300 min-w-[44px] min-h-[44px] justify-center ${
                   isActive 
-                    ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg scale-110' 
-                    : 'text-gray-600 dark:text-gray-300 hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg scale-105' 
+                    : 'text-gray-600 dark:text-gray-300 hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-800 active:scale-95'
                 }`}
               >
-                <Icon size={20} />
+                <Icon size={18} />
+                <span className="text-xs font-medium leading-none">{item.label}</span>
                 {isActive && (
-                  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
+                  <div className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
                 )}
               </a>
             );
@@ -126,16 +128,18 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Resume"
-            className="p-3 rounded-xl text-gray-600 dark:text-gray-300 hover:text-green-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+            className="flex flex-col items-center gap-1 p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:text-green-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 min-w-[44px] min-h-[44px] justify-center active:scale-95"
           >
-            <FaFileAlt size={20} />
+            <FaFileAlt size={18} />
+            <span className="text-xs font-medium leading-none">Resume</span>
           </a>
         </nav>
       ) : (
+        /* Desktop Navigation - Top */
         <nav className={`fixed top-4 left-1/2 -translate-x-1/2 px-6 py-3 flex items-center gap-2 z-40 rounded-2xl shadow-2xl backdrop-blur-md border transition-all duration-300 ${
           isScrolled 
-            ? 'bg-white/90 dark:bg-gray-900/90 border-gray-200/50 dark:border-gray-700/50' 
-            : 'bg-white/70 dark:bg-gray-900/70 border-white/30 dark:border-gray-700/30'
+            ? 'bg-white/95 dark:bg-gray-900/95 border-gray-200/60 dark:border-gray-700/60' 
+            : 'bg-white/80 dark:bg-gray-900/80 border-white/40 dark:border-gray-700/40'
         }`}>
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -171,12 +175,18 @@ export default function Header() {
         </nav>
       )}
 
-      {/* Enhanced Dark Mode Toggle */}
-      <div className="fixed top-4 right-4 z-50">
-        <div className={`bg-white/70 dark:bg-gray-800/70 backdrop-blur-md rounded-2xl p-3 border transition-all duration-300 hover:shadow-lg ${
+      {/* Responsive Dark Mode Toggle */}
+      <div className={`fixed z-50 ${
+        isMobile ? 'top-4 right-4' : 'top-4 right-4'
+      }`}>
+        <div className={`backdrop-blur-md rounded-2xl border transition-all duration-300 hover:shadow-lg ${
+          isMobile 
+            ? 'p-2.5' 
+            : 'p-3'
+        } ${
           isScrolled 
-            ? 'bg-white/90 dark:bg-gray-800/90 border-gray-200/50 dark:border-gray-700/50 shadow-lg' 
-            : 'border-white/30 dark:border-gray-700/30'
+            ? 'bg-white/95 dark:bg-gray-800/95 border-gray-200/60 dark:border-gray-700/60 shadow-lg' 
+            : 'bg-white/80 dark:bg-gray-800/80 border-white/40 dark:border-gray-700/40'
         }`}>
           <input
             type="checkbox"
@@ -187,13 +197,29 @@ export default function Header() {
           />
           <label
             htmlFor="darkModeToggle"
-            className="flex items-center cursor-pointer group"
+            className="flex items-center cursor-pointer group min-w-[44px] min-h-[44px] justify-center"
           >
-            <FaSun className="text-yellow-500 w-4 h-4 transition-transform group-hover:scale-110" />
-            <div className="relative w-10 h-5 bg-gray-300 dark:bg-gray-600 rounded-full mx-3 transition-colors">
-              <div className="absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full transition-all duration-300 dark:translate-x-5 shadow-md"></div>
-            </div>
-            <FaMoon className="text-gray-500 dark:text-yellow-400 w-4 h-4 transition-all group-hover:scale-110" />
+            {isMobile ? (
+              /* Mobile: Compact toggle */
+              <div className="relative w-8 h-4 bg-gray-300 dark:bg-gray-600 rounded-full transition-colors">
+                <div className="absolute top-0.5 left-0.5 w-3 h-3 bg-white rounded-full transition-all duration-300 dark:translate-x-4 shadow-md flex items-center justify-center">
+                  {typeof window !== 'undefined' && localStorage.getItem('darkMode') === 'true' ? (
+                    <FaMoon className="text-gray-600 w-2 h-2" />
+                  ) : (
+                    <FaSun className="text-yellow-500 w-2 h-2" />
+                  )}
+                </div>
+              </div>
+            ) : (
+              /* Desktop: Full toggle with icons */
+              <>
+                <FaSun className="text-yellow-500 w-4 h-4 transition-transform group-hover:scale-110" />
+                <div className="relative w-10 h-5 bg-gray-300 dark:bg-gray-600 rounded-full mx-3 transition-colors">
+                  <div className="absolute top-0.5 left-0.5 w-4 h-4 bg-white rounded-full transition-all duration-300 dark:translate-x-5 shadow-md"></div>
+                </div>
+                <FaMoon className="text-gray-500 dark:text-yellow-400 w-4 h-4 transition-all group-hover:scale-110" />
+              </>
+            )}
           </label>
         </div>
       </div>
