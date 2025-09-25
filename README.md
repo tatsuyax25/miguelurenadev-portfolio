@@ -8,32 +8,55 @@ Explore my work, discover the technologies I use, and feel free to reach out thr
 
 ## 🚀 Key Features
 
-- **Personal Showcase**: Learn about my skills and view projects I've worked on.
-- **Dark Mode**: Toggle between light and dark modes for a personalized experience.
-- **Responsive Design**: Optimized for all screen sizes, from mobile to desktop.
-- **Contact Form**: Submit your message directly through the integrated form powered by **Nodemailer**.
-- **Social Media Links**: Connect with me on [LinkedIn](https://linkedin.com/in/miguelurena) and [GitHub](https://github.com/miguelurena).
-- **Google Analytics**: Track user interactions to continuously improve the site.
+- **Modern Design**: Glassmorphism effects, gradient backgrounds, and smooth animations
+- **Responsive Navigation**: Mobile-optimized header with active section detection
+- **Tech Arsenal**: Categorized skills showcase with 27+ technologies
+- **Project Showcase**: Featured projects with detailed descriptions and live demos
+- **Dark Mode**: Toggle between light and dark modes with persistent preferences
+- **Contact Form**: Direct message submission powered by **Nodemailer**
+- **GitHub Integration**: Live GitHub statistics and repository links
+- **Social Media Links**: Connect with me on [LinkedIn](https://linkedin.com/in/miguelurena) and [GitHub](https://github.com/miguelurena)
+- **Performance Optimized**: Fast loading with Next.js SSR and image optimization
 
 ---
 
 ## 🔧 Technologies & Tools
 
-This portfolio utilizes the following technologies to provide a seamless and performance-driven experience:
+This portfolio utilizes cutting-edge technologies for optimal performance and user experience:
 
-- **Frontend**: React, Next.js, Tailwind CSS, Font Awesome, Slick Carousel
-- **Backend**: Nodemailer (for email submissions)
-- **Analytics**: Google Analytics
-- **Deployment**: Hosted on Netlify
+### Frontend
+- **React 18** - Component-based UI library
+- **Next.js 14** - Full-stack React framework with SSR
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Icons** - Comprehensive icon library
+- **Framer Motion** - Animation library (planned)
+
+### Backend & Services
+- **Nodemailer** - Email service for contact form
+- **Google Analytics** - User interaction tracking
+
+### Deployment & DevOps
+- **Netlify** - Primary hosting platform
+- **Vercel** - Alternative deployment option
+- **GitHub Actions** - CI/CD pipeline (planned)
+
+### Skills Showcased
+- **Frontend**: HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Bootstrap, Chart.js, Vite
+- **Backend**: Node.js, Express, NestJS, Python, Flask, Java, Spring, Django, MongoDB, Mongoose, PostgreSQL, GraphQL, Appwrite
+- **Tools & Cloud**: Git, GitHub, AWS, Google Cloud, Heroku, Netlify, Vercel, Render, Railway, NPM, Apache, Maven, Babel, OAuth, JSON, Figma
 
 ---
 
-## 📌 Features
+## 📌 Component Architecture
 
-1. **Contact Form with Nodemailer**: Easily get in touch by submitting a form. Messages are delivered to my inbox through **Nodemailer**.
-2. **Dark Mode Toggle**: Switch between light and dark modes, with your preference saved for future visits.
-3. **Google Analytics**: Gain insights into user interactions to improve the site experience.
-4. **Social Media Links**: Quick access to my [LinkedIn](https://linkedin.com/in/miguelurena) and [GitHub](https://github.com/miguelurena) profiles.
+### Core Components
+1. **Header.js** - Responsive navigation with active section detection and mobile optimization
+2. **Home.js** - Hero section with typing animation and tech-themed background effects
+3. **About.js** - Personal introduction with categorized skills grid and GitHub stats
+4. **Projects.js** - Two-tier project showcase (featured vs regular projects)
+5. **Contact.js** - Contact form with Nodemailer integration
+6. **Footer.js** - Social links and copyright information
+7. **GitHubStats.js** - Live GitHub statistics display
 
 ---
 
@@ -45,10 +68,57 @@ This project is open-source under the MIT License. Feel free to clone, modify, a
 
 ## 🔮 Future Enhancements
 
-- **More Projects**: Adding detailed project sections to highlight my work further.
-- **Blog**: A blog to share insights and development tips.
-- **Portfolio Gallery**: A gallery of images and case studies to showcase my work in more depth.
-- **SEO Optimization**: Ongoing improvements for better search engine visibility.
+- **Project Expansion**: Adding more detailed project case studies and live demos
+- **Blog Section**: Technical articles and development insights
+- **Animation Library**: Enhanced micro-interactions with Framer Motion
+- **CMS Integration**: Dynamic content management for projects and blog posts
+- **Performance Monitoring**: Real-time performance analytics
+- **SEO Optimization**: Enhanced meta tags and structured data
+- **Accessibility**: WCAG 2.1 AA compliance improvements
+- **Testing Suite**: Unit and integration tests with Jest and Cypress
+
+## 🛠️ Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/miguelurena/miguelurenadev-portfolio.git
+
+# Navigate to project directory
+cd miguelurenadev-portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── Header.js       # Navigation component
+│   ├── Home.js         # Hero section
+│   ├── About.js        # About & skills section
+│   ├── Projects.js     # Projects showcase
+│   ├── Contact.js      # Contact form
+│   ├── Footer.js       # Footer component
+│   └── GitHubStats.js  # GitHub integration
+├── pages/              # Next.js pages
+│   ├── _app.js         # App wrapper
+│   ├── _document.js    # HTML document
+│   ├── index.js        # Home page
+│   └── api/            # API routes
+├── styles/             # Global styles
+└── public/             # Static assets
+```
 
 ---
 
