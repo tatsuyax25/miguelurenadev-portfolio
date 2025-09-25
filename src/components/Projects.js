@@ -171,115 +171,197 @@ export default function Projects() {
           01010111 01101111 01110010 01101100 01100100
         </div>
       </div>
-      <div className="text-center mb-12 relative z-10">
-        <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 dark:from-cyan-300 dark:via-blue-400 dark:to-purple-500 bg-clip-text text-transparent">
+      <div className="text-center mb-16 relative z-10">
+        <h2 className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 dark:from-cyan-300 dark:via-blue-400 dark:to-purple-500 bg-clip-text text-transparent">
           Featured Projects
         </h2>
-        <div className="font-mono text-sm text-gray-600 dark:text-gray-400 mb-2">
+        <div className="font-mono text-lg text-gray-600 dark:text-gray-400 mb-4">
           <span className="text-green-500">{"//"}</span> Building the future, one project at a time
         </div>
-        <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-purple-600 mx-auto rounded-full"></div>
+        <div className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-purple-600 mx-auto rounded-full mb-4"></div>
+        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Explore my latest work showcasing modern web technologies and innovative solutions
+        </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <article
-            key={project.id}
-            className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col overflow-hidden animate-fadeInUp"
-            style={{ animationDelay: `${index * 0.1}s` }}
-          >
-            {/* Gradient overlay on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative overflow-hidden rounded-lg mb-4">
-              <Image
-                src={project.image}
-                alt={`${project.title} Screenshot`}
-                width={400}
-                height={300}
-                className="rounded-lg group-hover:scale-105 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-            <div className="flex-grow relative z-10">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{project.title}</h3>
-                {project.featured && (
-                  <span className="px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-bold rounded-full animate-pulse">
-                    FEATURED
-                  </span>
-                )}
+      
+      {/* Featured Projects Grid */}
+      <div className="space-y-16">
+        {/* Featured Projects */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {projects.filter(p => p.featured).map((project, index) => (
+            <article
+              key={project.id}
+              className="group relative bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden animate-fadeInUp"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Featured badge */}
+              <div className="absolute top-4 right-4 z-20">
+                <span className="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-bold rounded-full shadow-lg animate-pulse">
+                  ⭐ FEATURED
+                </span>
               </div>
               
-              {/* Tech Stack Badges */}
-              {project.techStack && (
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {project.techStack.map((tech, index) => (
+              {/* Image section */}
+              <div className="relative overflow-hidden h-64">
+                <Image
+                  src={project.image}
+                  alt={`${project.title} Screenshot`}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                
+                {/* Quick action overlay */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex space-x-4">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-white/90 text-gray-900 rounded-lg font-medium hover:bg-white transition-colors shadow-lg"
+                    >
+                      Live Demo
+                    </a>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-gray-900/90 text-white rounded-lg font-medium hover:bg-gray-900 transition-colors shadow-lg"
+                    >
+                      Source Code
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Content section */}
+              <div className="p-8 relative z-10">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {project.title}
+                </h3>
+                
+                {/* Tech Stack */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.techStack.map((tech, techIndex) => (
                     <span 
-                      key={index}
-                      className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs font-medium rounded-md border border-gray-200 dark:border-gray-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors"
+                      key={techIndex}
+                      className="px-3 py-1 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium rounded-full border border-blue-200 dark:border-blue-700"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-              )}
-              
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{project.description}</p>
-            </div>
-            
-            {/* Code snippet section */}
-            {project.codeSnippet && (
-              <div className="mt-4">
-                <button 
-                  onClick={() => toggleCode(project.id)}
-                  className="text-blue-500 hover:text-blue-700 text-sm font-medium transition-colors"
-                >
-                  {showCode[project.id] ? 'Hide Code' : 'View Code Sample'}
-                </button>
-                {showCode[project.id] && (
-                  <div className="mt-3">
-                    <h4 className="text-sm font-semibold mb-2 text-cyan-600 dark:text-cyan-400">{project.codeSnippet.title}</h4>
-                    <div className="bg-gray-900 rounded-lg border border-gray-700 overflow-hidden code-glow">
-                      {/* Terminal header */}
-                      <div className="flex items-center justify-between px-3 py-2 bg-gray-800 border-b border-gray-700">
-                        <div className="flex space-x-1">
-                          <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                          <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                          <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                  {project.description}
+                </p>
+                
+                {/* Code snippet toggle */}
+                {project.codeSnippet && (
+                  <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                    <button 
+                      onClick={() => toggleCode(project.id)}
+                      className="flex items-center text-blue-500 hover:text-blue-700 text-sm font-medium transition-colors group/btn"
+                    >
+                      <span className="mr-2">{showCode[project.id] ? '🔼' : '🔽'}</span>
+                      {showCode[project.id] ? 'Hide Code Sample' : 'View Code Sample'}
+                      <span className="ml-1 group-hover/btn:translate-x-1 transition-transform">→</span>
+                    </button>
+                    
+                    {showCode[project.id] && (
+                      <div className="mt-4 animate-fadeInUp">
+                        <h4 className="text-sm font-semibold mb-3 text-cyan-600 dark:text-cyan-400">
+                          💻 {project.codeSnippet.title}
+                        </h4>
+                        <div className="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
+                          <div className="flex items-center justify-between px-4 py-3 bg-gray-800 border-b border-gray-700">
+                            <div className="flex space-x-2">
+                              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                            </div>
+                            <span className="text-xs text-gray-400 font-mono">code.js</span>
+                          </div>
+                          <pre className="text-green-400 p-4 text-sm overflow-x-auto font-mono leading-relaxed">
+                            <code>{project.codeSnippet.code}</code>
+                          </pre>
                         </div>
-                        <span className="text-xs text-gray-400 font-mono">code.js</span>
                       </div>
-                      <pre className="text-green-400 p-3 text-xs overflow-x-auto font-mono">
-                        <code>{project.codeSnippet.code}</code>
-                      </pre>
-                    </div>
+                    )}
                   </div>
                 )}
               </div>
-            )}
-            
-            {/* Enhanced action buttons */}
-            <div className="mt-6 flex justify-center space-x-3">
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-medium rounded-lg hover:from-green-600 hover:to-emerald-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+            </article>
+          ))}
+        </div>
+        
+        {/* Other Projects */}
+        <div>
+          <h3 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-gray-200">
+            More Projects
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.filter(p => !p.featured).map((project, index) => (
+              <article
+                key={project.id}
+                className="group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden animate-fadeInUp"
+                style={{ animationDelay: `${(index + 2) * 0.1}s` }}
               >
-                <FontAwesomeIcon icon={faExternalLinkAlt} className="mr-2" size="sm" />
-                Live Demo
-              </a>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white text-sm font-medium rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
-              >
-                <FontAwesomeIcon icon={faGithub} className="mr-2" size="sm" />
-                Source Code
-              </a>
-            </div>
-          </article>
-        ))}
+                <div className="relative overflow-hidden h-48">
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} Screenshot`}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                
+                <div className="p-6">
+                  <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                    {project.title}
+                  </h4>
+                  
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {project.techStack?.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex}
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3">
+                    {project.description}
+                  </p>
+                  
+                  <div className="flex space-x-3">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center px-3 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-medium rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-200"
+                    >
+                      Live Demo
+                    </a>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center px-3 py-2 bg-gray-800 dark:bg-gray-700 text-white text-sm font-medium rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 transition-all duration-200"
+                    >
+                      Code
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
