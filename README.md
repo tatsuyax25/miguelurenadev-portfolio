@@ -10,8 +10,8 @@ Explore my work, discover the technologies I use, and feel free to reach out thr
 
 - **Modern Design**: Glassmorphism effects, gradient backgrounds, and smooth animations
 - **Responsive Navigation**: Mobile-optimized header with active section detection
-- **Tech Arsenal**: Categorized skills showcase with 27+ technologies
-- **Project Showcase**: Featured projects with detailed descriptions and live demos
+- **Tech Arsenal**: Categorized skills showcase with 29+ technologies
+- **Project Showcase**: 9 projects with two-tier layout (featured vs regular projects)
 - **Dark Mode**: Toggle between light and dark modes with persistent preferences
 - **Contact Form**: Direct message submission powered by **Nodemailer**
 - **GitHub Integration**: Live GitHub statistics and repository links
@@ -41,9 +41,9 @@ This portfolio utilizes cutting-edge technologies for optimal performance and us
 - **GitHub Actions** - CI/CD pipeline (planned)
 
 ### Skills Showcased
-- **Frontend**: HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Bootstrap, Chart.js, Vite
-- **Backend**: Node.js, Express, NestJS, Python, Flask, Java, Spring, Django, MongoDB, Mongoose, PostgreSQL, GraphQL, Appwrite
-- **Tools & Cloud**: Git, GitHub, AWS, Google Cloud, Heroku, Netlify, Vercel, Render, Railway, NPM, Apache, Maven, Babel, OAuth, JSON, Figma
+- **Frontend (11 items)**: HTML5, CSS3, JavaScript, TypeScript, React, Next.js, Tailwind CSS, Bootstrap, Chart.js, Vite
+- **Backend (13 items)**: Node.js, Express, NestJS, Python, Flask, Java, Spring, Django, MongoDB, Mongoose, PostgreSQL, GraphQL, Appwrite
+- **Tools & Cloud (17 items)**: Git, GitHub, AWS, Google Cloud, Heroku, Netlify, Vercel, Render, Railway, NPM, Apache, Maven, Babel, OAuth, JSON, Figma
 
 ---
 
@@ -53,7 +53,7 @@ This portfolio utilizes cutting-edge technologies for optimal performance and us
 1. **Header.js** - Responsive navigation with active section detection and mobile optimization
 2. **Home.js** - Hero section with typing animation and tech-themed background effects
 3. **About.js** - Personal introduction with categorized skills grid and GitHub stats
-4. **Projects.js** - Two-tier project showcase (featured vs regular projects)
+4. **Projects.js** - Two-tier project showcase with 9 projects (2 featured, 7 regular)
 5. **Contact.js** - Contact form with Nodemailer integration
 6. **Footer.js** - Social links and copyright information
 7. **GitHubStats.js** - Live GitHub statistics display
@@ -81,7 +81,7 @@ This project is open-source under the MIT License. Feel free to clone, modify, a
 
 ```bash
 # Clone the repository
-git clone https://github.com/miguelurena/miguelurenadev-portfolio.git
+git clone https://github.com/tatsuyax25/miguelurenadev-portfolio.git
 
 # Navigate to project directory
 cd miguelurenadev-portfolio
@@ -99,26 +99,51 @@ npm run build
 npm start
 ```
 
+## 🎯 Featured Projects
+
+### Featured Projects (Large Cards)
+1. **Cinema Search** - Movie discovery app with React, Appwrite, and Tailwind CSS
+2. **Portfolio** - This portfolio built with Next.js, React, and Tailwind CSS
+
+### More Projects (Compact Grid)
+3. **Renewable Energy Monitor** - Real-time dashboard with React, Node.js, Chart.js
+4. **Plantivity** - Self-care task tracker with React and API integration
+5. **Frontend Dev Quiz** - Interactive quiz app with JavaScript and React
+6. **Pocket Web Calculator** - Responsive calculator with HTML, CSS, JavaScript
+7. **Snake Web Game JS** - Classic snake game with Canvas API
+8. **The Great Outdoor Journal** - CRUD app with Node.js, Express, MongoDB, OAuth
+9. **Connect 4 Web Game** - Browser-based Connect Four game
+
 ## 📁 Project Structure
 
 ```
 src/
 ├── components/          # React components
-│   ├── Header.js       # Navigation component
-│   ├── Home.js         # Hero section
-│   ├── About.js        # About & skills section
-│   ├── Projects.js     # Projects showcase
-│   ├── Contact.js      # Contact form
-│   ├── Footer.js       # Footer component
-│   └── GitHubStats.js  # GitHub integration
+│   ├── Header.js       # Navigation with active section detection
+│   ├── Home.js         # Hero section with typewriter animation
+│   ├── About.js        # Skills grid with 29+ technologies
+│   ├── Projects.js     # Two-tier project showcase (9 projects)
+│   ├── Contact.js      # Contact form with Nodemailer
+│   ├── Footer.js       # Social links with animations
+│   └── GitHubStats.js  # Live GitHub statistics
 ├── pages/              # Next.js pages
-│   ├── _app.js         # App wrapper
-│   ├── _document.js    # HTML document
-│   ├── index.js        # Home page
-│   └── api/            # API routes
-├── styles/             # Global styles
-└── public/             # Static assets
+│   ├── _app.js         # App wrapper with dark mode
+│   ├── _document.js    # HTML document structure
+│   ├── index.js        # Main portfolio page
+│   └── api/            # API routes for contact form
+├── styles/             # Global styles and Tailwind config
+└── public/             # Static assets and project images
+    └── images/         # Project screenshots
 ```
+
+## 🎨 Design Features
+
+- **Glassmorphism Effects**: Semi-transparent cards with backdrop blur
+- **Responsive Grid Layouts**: Mobile-first design with Tailwind breakpoints
+- **Hover Animations**: Scale, shadow, and color transitions
+- **Dark Mode Support**: Complete light/dark theme switching
+- **Mobile Optimization**: Touch-friendly buttons (44px minimum)
+- **Accessibility**: Semantic HTML, proper contrast ratios, keyboard navigation
 
 ---
 
