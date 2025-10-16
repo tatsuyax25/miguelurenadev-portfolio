@@ -1,18 +1,7 @@
 import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 
 export default function Projects() {
-  const [showCode, setShowCode] = useState({});
 
-  const toggleCode = (projectId) => {
-    setShowCode(prev => ({
-      ...prev,
-      [projectId]: !prev[projectId]
-    }));
-  };
 
   const projects = [
     {
@@ -25,20 +14,6 @@ export default function Projects() {
       image: "/images/MovieSearch.png",
       techStack: ["React", "Appwrite", "Tailwind CSS", "JavaScript"],
       featured: true,
-      codeSnippet: {
-        title: "Movie Search with Trending Algorithm",
-        code: `const searchMovies = async (query) => {
-  const response = await databases.listDocuments(
-    DATABASE_ID, COLLECTION_ID,
-    [Query.search('title', query)]
-  );
-  
-  return response.documents.map(movie => ({
-    ...movie,
-    trending: calculateTrendingScore(movie)
-  }));
-};`
-      }
     },
     {
       id: 2,
@@ -50,19 +25,19 @@ export default function Projects() {
       image: "/images/portfoliov2.png",
       techStack: ["Next.js", "React", "Tailwind CSS", "Node.js"],
       featured: true,
-      codeSnippet: {
-        title: "Dark Mode Toggle Implementation",
-        code: `const toggleDarkMode = () => {
-  document.body.classList.toggle("dark");
-  localStorage.setItem(
-    'darkMode', 
-    document.body.classList.contains('dark')
-  );
-};`
-      }
     },
     {
       id: 3,
+      title: "Renewable Energy Monitor",
+      description:
+        "A real-time renewable energy monitoring dashboard that tracks solar production, energy consumption, carbon footprint, and cost savings.",
+      live: "https://renewableenergymonitordashboard.onrender.com",
+      link: "https://github.com/tatsuyax25/renewable-energy-monitor",
+      image: "/images/renewableenergydashboard.png",
+      techStack: ["React", "Node.js", "Chart.js", "MongoDB"],
+    },
+    {
+      id: 4,
       title: "Plantivity",
       description:
         "Plantivity motivates users by completing their daily self-care tasks and rewarding them with a badge. They assign themselves their three daily tasks and points, which help your self-care plant grow!",
@@ -70,87 +45,56 @@ export default function Projects() {
       link: "https://github.com/tatsuyax25/team6-hackathon-fe",
       image: "/images/Plantivityv3.png",
       techStack: ["React", "CSS", "JavaScript", "API"],
-      codeSnippet: {
-        title: "Task Completion Logic",
-        code: `const completeTask = (taskId) => {
-  setTasks(prev => prev.map(task => 
-    task.id === taskId 
-      ? { ...task, completed: true }
-      : task
-  ));
-  updatePlantGrowth();
-};`
-      }
     },
     {
-      id: 4,
+      id: 5,
+      title: "Frontend Dev Quiz",
+      description:
+        "A modern, interactive quiz application for testing frontend development knowledge across HTML, CSS, JavaScript, and React. Features a beautiful UI with dark/light themes, animated backgrounds, timer functionality, and comprehensive question explanations.",
+      live: "https://amazingquizjs.netlify.app",
+      link: "https://github.com/tatsuyax25/quiz-app-with-javascript",
+      image: "/images/amazingquizjs.png",
+      techStack: ["JavaScript", "HTML", "CSS", "React"],
+    },
+    {
+      id: 6,
       title: "Pocket Web Calculator",
       description:
         "A responsive and accessible calculator built with HTML, CSS, and JavaScript. This project provides a clean user interface and performs basic arithmetic operations.",
       live: "https://pocketwebcalculator.netlify.app",
       link: "https://github.com/tatsuyax25/simplecalculator",
-      image: "/images/simplecalculator.png",
-      codeSnippet: {
-        title: "Calculator Logic",
-        code: `function calculate() {
-  try {
-    const result = eval(display.value);
-    display.value = result;
-    addToHistory(display.value + ' = ' + result);
-  } catch (error) {
-    display.value = 'Error';
-  }
-}`
-      }
+      image: "/images/simplewebcalculator.png",
+      techStack: ["HTML", "CSS", "JavaScript"],
     },
     {
-      id: 5,
+      id: 7,
       title: "Snake Web Game JS",
       description:
         "Navigate the snake to eat food, avoid walls and its own body, and achieve the highest score possible. Each piece of food increases the snake's length, adding to the challenge.",
       live: "https://snake-web-game-js.netlify.app",
       link: "https://github.com/tatsuyax25/snake-game-js",
-      image: "/images/snakeWebGameJS.png",
-      codeSnippet: {
-        title: "Snake Movement Logic",
-        code: `function moveSnake() {
-  const head = { ...snake[0] };
-  
-  switch(direction) {
-    case 'UP': head.y -= 1; break;
-    case 'DOWN': head.y += 1; break;
-    case 'LEFT': head.x -= 1; break;
-    case 'RIGHT': head.x += 1; break;
-  }
-  
-  snake.unshift(head);
-  if (!ateFood) snake.pop();
-}`
-      }
+      image: "/images/snakegamejs.png",
+      techStack: ["JavaScript", "HTML", "CSS", "Canvas"],
     },
     {
-      id: 6,
+      id: 8,
+      title: "The Great Outdoor Journal",
+      description:
+        "The Great Outdoor Journal is a CRUD (Create, Read, Update, Delete) web application that allows users to create, edit, and manage their outdoor adventure journals. Users can authenticate via Google OAuth, share their experiences, and explore adventures shared by other outdoor enthusiasts.",
+      live: "https://the-great-journal.onrender.com",
+      link: "https://github.com/tatsuyax25/Project-2-SEI",
+      image: "/images/thegreatoutdoorjournal.png",
+      techStack: ["Node.js", "Express", "MongoDB", "OAuth"],
+    },
+    {
+      id: 9,
       title: "Connect 4 Web Game",
       description:
         "Connect Four is a game you play against the computer. Take turns dropping colored discs into a vertical grid. The first to get four of their discs in a row, either horizontally, vertically, or diagonally, wins the game.",
       live: "https://connect-four-web-game.netlify.app",
       link: "https://github.com/tatsuyax25/connect-four",
       image: "/images/ConnectFour.png",
-      codeSnippet: {
-        title: "Win Detection Algorithm",
-        code: `function checkWin(board, row, col, player) {
-  const directions = [
-    [0, 1], [1, 0], [1, 1], [1, -1]
-  ];
-  
-  return directions.some(([dx, dy]) => {
-    let count = 1;
-    count += countDirection(board, row, col, dx, dy, player);
-    count += countDirection(board, row, col, -dx, -dy, player);
-    return count >= 4;
-  });
-}`
-      }
+      techStack: ["HTML", "CSS", "JavaScript"],
     },
   ];
 
@@ -259,40 +203,7 @@ export default function Projects() {
                   {project.description}
                 </p>
                 
-                {/* Code snippet toggle */}
-                {project.codeSnippet && (
-                  <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
-                    <button 
-                      onClick={() => toggleCode(project.id)}
-                      className="flex items-center text-blue-500 hover:text-blue-700 text-sm font-medium transition-colors group/btn"
-                    >
-                      <span className="mr-2">{showCode[project.id] ? '🔼' : '🔽'}</span>
-                      {showCode[project.id] ? 'Hide Code Sample' : 'View Code Sample'}
-                      <span className="ml-1 group-hover/btn:translate-x-1 transition-transform">→</span>
-                    </button>
-                    
-                    {showCode[project.id] && (
-                      <div className="mt-4 animate-fadeInUp">
-                        <h4 className="text-sm font-semibold mb-3 text-cyan-600 dark:text-cyan-400">
-                          💻 {project.codeSnippet.title}
-                        </h4>
-                        <div className="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
-                          <div className="flex items-center justify-between px-4 py-3 bg-gray-800 border-b border-gray-700">
-                            <div className="flex space-x-2">
-                              <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                              <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                              <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                            </div>
-                            <span className="text-xs text-gray-400 font-mono">code.js</span>
-                          </div>
-                          <pre className="text-green-400 p-4 text-sm overflow-x-auto font-mono leading-relaxed">
-                            <code>{project.codeSnippet.code}</code>
-                          </pre>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
+
               </div>
             </article>
           ))}

@@ -12,7 +12,7 @@ export default function Footer() {
           &lt;/html&gt;
         </div>
         <div className="absolute top-6 right-10 font-mono text-sm text-green-600 dark:text-green-300 transform -rotate-12 animate-bounce">
-          console.log("Thanks!");
+          console.log(&quot;Thanks!&quot;);
         </div>
         <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-cyan-600 dark:bg-cyan-300 rounded-full animate-ping"></div>
         <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full animate-pulse"></div>
