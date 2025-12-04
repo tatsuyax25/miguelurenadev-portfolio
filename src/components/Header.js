@@ -91,16 +91,16 @@ export default function Header() {
 
   return (
     <>
-
-
       {/* Responsive Navbar */}
       {isMobile ? (
         /* Mobile & Tablet Navigation - Bottom */
-        <nav className={`fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-lg px-3 py-3 rounded-2xl shadow-2xl backdrop-blur-md border z-40 flex justify-between items-center transition-all duration-300 safe-area-pb-4 ${
-          isScrolled 
-            ? 'bg-white/95 dark:bg-gray-900/95 border-gray-200/60 dark:border-gray-700/60' 
-            : 'bg-white/80 dark:bg-gray-900/80 border-white/40 dark:border-gray-700/40'
-        }`}>
+        <nav
+          className={`fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-lg px-3 py-3 rounded-2xl shadow-2xl backdrop-blur-md border z-40 flex justify-between items-center transition-all duration-300 safe-area-pb-4 ${
+            isScrolled
+              ? "bg-white/95 dark:bg-gray-900/95 border-gray-200/60 dark:border-gray-700/60"
+              : "bg-white/80 dark:bg-gray-900/80 border-white/40 dark:border-gray-700/40"
+          }`}
+        >
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeSection === item.id;
@@ -110,13 +110,15 @@ export default function Header() {
                 href={`#${item.id}`}
                 aria-label={item.label}
                 className={`relative flex flex-col items-center gap-1 p-2.5 rounded-xl transition-all duration-300 min-w-[44px] min-h-[44px] justify-center ${
-                  isActive 
-                    ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg scale-105' 
-                    : 'text-gray-600 dark:text-gray-300 hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-800 active:scale-95'
+                  isActive
+                    ? "text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg scale-105"
+                    : "text-gray-600 dark:text-gray-300 hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-800 active:scale-95"
                 }`}
               >
                 <Icon size={18} />
-                <span className="text-xs font-medium leading-none">{item.label}</span>
+                <span className="text-xs font-medium leading-none">
+                  {item.label}
+                </span>
                 {isActive && (
                   <div className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
                 )}
@@ -131,16 +133,20 @@ export default function Header() {
             className="flex flex-col items-center gap-1 p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:text-green-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 min-w-[44px] min-h-[44px] justify-center active:scale-95"
           >
             <FaFileAlt size={18} />
-            <span className="text-xs font-medium leading-none">Resume</span>
+            <span className="text-xs font-medium leading-none">
+              View My Resume
+            </span>
           </a>
         </nav>
       ) : (
         /* Desktop Navigation - Top */
-        <nav className={`fixed top-4 left-1/2 -translate-x-1/2 px-6 py-3 flex items-center gap-2 z-40 rounded-2xl shadow-2xl backdrop-blur-md border transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white/95 dark:bg-gray-900/95 border-gray-200/60 dark:border-gray-700/60' 
-            : 'bg-white/80 dark:bg-gray-900/80 border-white/40 dark:border-gray-700/40'
-        }`}>
+        <nav
+          className={`fixed top-4 left-1/2 -translate-x-1/2 px-6 py-3 flex items-center gap-2 z-40 rounded-2xl shadow-2xl backdrop-blur-md border transition-all duration-300 ${
+            isScrolled
+              ? "bg-white/95 dark:bg-gray-900/95 border-gray-200/60 dark:border-gray-700/60"
+              : "bg-white/80 dark:bg-gray-900/80 border-white/40 dark:border-gray-700/40"
+          }`}
+        >
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeSection === item.id;
@@ -149,12 +155,15 @@ export default function Header() {
                 key={item.id}
                 href={`#${item.id}`}
                 className={`relative flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 group ${
-                  isActive 
-                    ? 'text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg' 
-                    : 'text-gray-700 dark:text-gray-300 hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-800'
+                  isActive
+                    ? "text-white bg-gradient-to-r from-cyan-500 to-blue-600 shadow-lg"
+                    : "text-gray-700 dark:text-gray-300 hover:text-cyan-500 hover:bg-gray-100 dark:hover:bg-gray-800"
                 }`}
               >
-                <Icon size={16} className="transition-transform group-hover:scale-110" />
+                <Icon
+                  size={16}
+                  className="transition-transform group-hover:scale-110"
+                />
                 <span className="text-sm font-medium">{item.label}</span>
                 {isActive && (
                   <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-white rounded-full"></div>
@@ -164,36 +173,42 @@ export default function Header() {
           })}
           <div className="w-px h-6 bg-gray-300 dark:bg-gray-600 mx-2"></div>
           <a
-            href="https://drive.google.com/file/d/1pCiMljnegSNSIr2bVuB2TH-HsF1S8Gwb/view?usp=sharing"
+            href="https://drive.google.com/file/d/10Ii1RTsPF9BtsUYO-m5IEaUWHapT5pFm/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 rounded-xl text-gray-700 dark:text-gray-300 hover:text-green-500 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group"
           >
-            <FaFileAlt size={16} className="transition-transform group-hover:scale-110" />
+            <FaFileAlt
+              size={16}
+              className="transition-transform group-hover:scale-110"
+            />
             <span className="text-sm font-medium">Resume</span>
           </a>
         </nav>
       )}
 
       {/* Responsive Dark Mode Toggle */}
-      <div className={`fixed z-50 ${
-        isMobile ? 'top-4 right-4' : 'top-4 right-4'
-      }`}>
-        <div className={`backdrop-blur-md rounded-2xl border transition-all duration-300 hover:shadow-lg ${
-          isMobile 
-            ? 'p-2.5' 
-            : 'p-3'
-        } ${
-          isScrolled 
-            ? 'bg-white/95 dark:bg-gray-800/95 border-gray-200/60 dark:border-gray-700/60 shadow-lg' 
-            : 'bg-white/80 dark:bg-gray-800/80 border-white/40 dark:border-gray-700/40'
-        }`}>
+      <div
+        className={`fixed z-50 ${isMobile ? "top-4 right-4" : "top-4 right-4"}`}
+      >
+        <div
+          className={`backdrop-blur-md rounded-2xl border transition-all duration-300 hover:shadow-lg ${
+            isMobile ? "p-2.5" : "p-3"
+          } ${
+            isScrolled
+              ? "bg-white/95 dark:bg-gray-800/95 border-gray-200/60 dark:border-gray-700/60 shadow-lg"
+              : "bg-white/80 dark:bg-gray-800/80 border-white/40 dark:border-gray-700/40"
+          }`}
+        >
           <input
             type="checkbox"
             id="darkModeToggle"
             className="hidden"
             onChange={toggleDarkMode}
-            defaultChecked={typeof window !== 'undefined' && localStorage.getItem('darkMode') === 'true'}
+            defaultChecked={
+              typeof window !== "undefined" &&
+              localStorage.getItem("darkMode") === "true"
+            }
           />
           <label
             htmlFor="darkModeToggle"
@@ -203,7 +218,8 @@ export default function Header() {
               /* Mobile: Compact toggle */
               <div className="relative w-8 h-4 bg-gray-300 dark:bg-gray-600 rounded-full transition-colors">
                 <div className="absolute top-0.5 left-0.5 w-3 h-3 bg-white rounded-full transition-all duration-300 dark:translate-x-4 shadow-md flex items-center justify-center">
-                  {typeof window !== 'undefined' && localStorage.getItem('darkMode') === 'true' ? (
+                  {typeof window !== "undefined" &&
+                  localStorage.getItem("darkMode") === "true" ? (
                     <FaMoon className="text-gray-600 w-2 h-2" />
                   ) : (
                     <FaSun className="text-yellow-500 w-2 h-2" />
