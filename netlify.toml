@@ -1,12 +1,14 @@
 [build]
   command = "npm run build"
   publish = ".next"
+  base = "."
+
+[build.environment]
+  NODE_VERSION = "24"
+  NETLIFY_BUILD_IMAGE = "noble"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-
-[build.environment]
-  NODE_VERSION = "18"
 
 [[headers]]
   for = "/_next/static/*"
@@ -17,3 +19,8 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
