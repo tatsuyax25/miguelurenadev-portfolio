@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 export default function HomeSection() {
   const [text, setText] = useState("");
@@ -51,19 +50,6 @@ export default function HomeSection() {
       </div>
       
       <div className="text-center relative z-10">
-        {/* Hero Image */}
-        <div className="mb-8 flex justify-center">
-          <div className="relative w-48 h-48 sm:w-64 sm:h-64">
-            <Image
-              src="/HeroImage.png"
-              alt="Miguel Ureña"
-              fill
-              className="rounded-full object-cover object-top shadow-2xl ring-4 ring-blue-500/50 dark:ring-purple-500/50"
-              priority
-            />
-          </div>
-        </div>
-        
         {/* Typing Effect with enhanced styling */}
         <h2 className="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 dark:from-cyan-300 dark:via-blue-400 dark:to-purple-500 bg-clip-text text-transparent">
           {text}

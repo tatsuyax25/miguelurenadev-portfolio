@@ -156,7 +156,7 @@ export default function About() {
                 alt="Miguel Ureña"
                 width={320}
                 height={320}
-                className="rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-2xl"
+                className="rounded-full object-cover object-top border-4 border-white dark:border-gray-800 shadow-2xl"
               />
               
               {/* Tech overlay */}
