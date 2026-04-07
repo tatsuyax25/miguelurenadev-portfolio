@@ -155,7 +155,7 @@ export default function About() {
                 src="/HeroImage.png"
                 alt="Miguel Ureña"
                 width={320}
-                height={320}
+                height={400}
                 className="rounded-full object-cover object-top border-4 border-white dark:border-gray-800 shadow-2xl"
               />
               
