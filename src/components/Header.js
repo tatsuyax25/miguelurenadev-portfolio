@@ -122,7 +122,7 @@ export default function Header() {
           >
             <FaFileAlt size={18} />
             <span className="text-xs font-medium leading-none">
-              View My Resume
+              Resume
             </span>
           </a>
         </nav>
