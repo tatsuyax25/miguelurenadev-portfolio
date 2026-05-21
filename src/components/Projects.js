@@ -20,6 +20,17 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
+      title: "GameLog - Game Backlog Tracker",
+      description:
+        "A full-stack MERN application that lets users track their personal game library. Features include JWT authentication, game search powered by the RAWG API, status filtering, sorting, star ratings, personal notes, and a stats dashboard with visual breakdowns by status and genre. Planned in ClickUp, wireframed in Figma, and deployed on Netlify and Render.",
+      live: "https://gamebacklogtracker.netlify.app",
+      link: "https://github.com/tatsuyax25/game-backlog-tracker",
+      image: "/images/gamebacklogtracker.png",
+      techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      featured: true, // This project will appear in the "Featured" section
+    },
+    {
+      id: 2,
       title: "Cinema Search",
       description:
         "A modern movie discovery web app built with React.js, Appwrite, and Tailwind CSS. Cinema Search lets users search and browse movies, featuring a trending algorithm that tracks popular searches. Designed with a clean UI and responsive layout, this project highlights full-stack integration and real-time data handling.",
@@ -30,7 +41,7 @@ export default function Projects() {
       featured: true, // This project will appear in the "Featured" section
     },
     {
-      id: 2,
+      id: 3,
       title: "Portfolio",
       description:
         "I'm excited to unveil my new portfolio, built with Next.js, React, and Tailwind CSS, showcasing a modern, responsive design with smooth transitions and a sleek dark mode. This update replaces my previous portfolio and highlights my skills in web development and UI design.",
@@ -38,10 +49,10 @@ export default function Projects() {
       link: "https://github.com/tatsuyax25/miguelurenadev-portfolio",
       image: "/images/portfoliov2.png",
       techStack: ["Next.js", "React", "Tailwind CSS", "Node.js"],
-      featured: true, // This project will appear in the "Featured" section
+      featured: false, // This project will appear in the "Featured" section
     },
     {
-      id: 3,
+      id: 4,
       title: "Renewable Energy Monitor",
       description:
         "A real-time renewable energy monitoring dashboard that tracks solar production, energy consumption, carbon footprint, and cost savings.",
@@ -49,10 +60,10 @@ export default function Projects() {
       link: "https://github.com/tatsuyax25/renewable-energy-monitor",
       image: "/images/renewableenergydashboard.png",
       techStack: ["React", "Node.js", "Chart.js", "MongoDB"],
-      // No 'featured' property means this goes to "More Projects" section
+      featured: false, // This project will appear in the "Featured" section
     },
     {
-      id: 4,
+      id: 5,
       title: "Plantivity",
       description:
         "Plantivity motivates users by completing their daily self-care tasks and rewarding them with a badge. They assign themselves their three daily tasks and points, which help your self-care plant grow!",
@@ -60,9 +71,10 @@ export default function Projects() {
       link: "https://github.com/tatsuyax25/team6-hackathon-fe",
       image: "/images/Plantivityv3.png",
       techStack: ["React", "CSS", "JavaScript", "API"],
+      featured: false, // This project will appear in the "Featured" section
     },
     {
-      id: 5,
+      id: 6,
       title: "Frontend Dev Quiz",
       description:
         "A modern, interactive quiz application for testing frontend development knowledge across HTML, CSS, JavaScript, and React. Features a beautiful UI with dark/light themes, animated backgrounds, timer functionality, and comprehensive question explanations.",
@@ -70,16 +82,7 @@ export default function Projects() {
       link: "https://github.com/tatsuyax25/quiz-app-with-javascript",
       image: "/images/amazingquizjs.png",
       techStack: ["JavaScript", "HTML", "CSS", "React"],
-    },
-    {
-      id: 6,
-      title: "Pocket Web Calculator",
-      description:
-        "A responsive and accessible calculator built with HTML, CSS, and JavaScript. This project provides a clean user interface and performs basic arithmetic operations.",
-      live: "https://pocketwebcalculator.netlify.app",
-      link: "https://github.com/tatsuyax25/simplecalculator",
-      image: "/images/simplewebcalculator.png",
-      techStack: ["HTML", "CSS", "JavaScript"],
+      featured: false, // This project will appear in the "Featured" section
     },
     {
       id: 7,
@@ -90,6 +93,7 @@ export default function Projects() {
       link: "https://github.com/tatsuyax25/snake-game-js",
       image: "/images/snakegamejs.png",
       techStack: ["JavaScript", "HTML", "CSS", "Canvas"],
+      featured: false, // This project will appear in the "Featured" section
     },
     {
       id: 8,
@@ -100,6 +104,7 @@ export default function Projects() {
       link: "https://github.com/tatsuyax25/Project-2-SEI",
       image: "/images/thegreatoutdoorjournal.png",
       techStack: ["Node.js", "Express", "MongoDB", "OAuth"],
+      featured: false, // This project will appear in the "Featured" section
     },
     {
       id: 9,
@@ -110,6 +115,7 @@ export default function Projects() {
       link: "https://github.com/tatsuyax25/connect-four",
       image: "/images/ConnectFour.png",
       techStack: ["HTML", "CSS", "JavaScript"],
+      featured: false, // This project will appear in the "Featured" section
     },
   ];
 
