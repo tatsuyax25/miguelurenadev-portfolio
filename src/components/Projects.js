@@ -47,7 +47,7 @@ export default function Projects() {
         "I'm excited to unveil my new portfolio, built with Next.js, React, and Tailwind CSS, showcasing a modern, responsive design with smooth transitions and a sleek dark mode. This update replaces my previous portfolio and highlights my skills in web development and UI design.",
       live: "https://miguelurenaportfolio.netlify.app",
       link: "https://github.com/tatsuyax25/miguelurenadev-portfolio",
-      image: "/images/portfoliov2.png",
+      image: "/images/miguelportfolio.png",
       techStack: ["Next.js", "React", "Tailwind CSS", "Node.js"],
       featured: false, // This project will appear in the "Featured" section
     },
